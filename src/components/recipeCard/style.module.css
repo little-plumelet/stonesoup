@@ -1,0 +1,22 @@
+.cookingTimeBlock {
+  display: flex;
+  align-items: center;
+}
+
+.cookingTime {
+  margin-left: 0.5rem;
+}
+
+.cookingTimeIcon {
+  font-size: large;
+}
+
+.likeBlock {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.like {
+  margin-right: 0.5rem;
+}

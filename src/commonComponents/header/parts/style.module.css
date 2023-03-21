@@ -8,9 +8,11 @@
 .active {
   color: var(--primary-color-red);
   text-decoration: none;
+  font-family: 'Lato', sans-serif;
 }
 
 .pending {
   color: black;
   text-decoration: none;
+  font-family: 'Lato', sans-serif;
 }
