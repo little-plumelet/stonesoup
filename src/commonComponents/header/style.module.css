@@ -1,0 +1,11 @@
+.header {
+  margin: 1rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Cookie', sans-serif;
+  font-size: 4rem;
+}

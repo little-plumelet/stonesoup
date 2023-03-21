@@ -1,10 +1,20 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { AboutPage } from './pages/aboutPage';
 import { ErrorPage } from './pages/errorPage';
+import { HomePage } from './pages/homePage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>Hello world!</div>,
+    element: <HomePage />,
+  },
+  {
+    path: '/home',
+    element: <Navigate replace to="/" />,
+  },
+  {
+    path: '/about',
+    element: <AboutPage />,
   },
   {
     path: '*',
