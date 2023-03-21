@@ -1,0 +1,16 @@
+@import '../../../vars.css';
+.nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem
+}
+
+.active {
+  color: var(--primary-color-red);
+  text-decoration: none;
+}
+
+.pending {
+  color: black;
+  text-decoration: none;
+}
