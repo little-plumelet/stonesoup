@@ -1,0 +1,25 @@
+.errorPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.errorTitle {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.errorStatus {
+  font-size: x-large;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.errorText {
+  text-align: center;
+  display: block;
+}
