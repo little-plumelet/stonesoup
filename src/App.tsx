@@ -1,11 +1,9 @@
-import { useState } from 'react'
-
-function App() {
+function App(): JSX.Element {
   return (
-    <div >
+    <div>
       Hello World
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
