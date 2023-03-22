@@ -1,5 +1,5 @@
 import { DashboardOutlined, LikeTwoTone } from '@ant-design/icons';
-import { Card } from 'antd';
+import { Card, Tooltip } from 'antd';
 import { RECIPE_MOCK_DATA } from './recipeMockData';
 import style from './style.module.css';
 
@@ -15,7 +15,11 @@ export function RecipeCard() {
       cover={<img alt="recipe" src={data?.image} />}
     >
       <Meta
-        title={data?.title}
+        title={
+          <Tooltip title={data?.title} placement="topLeft">
+            {data?.title}
+          </Tooltip>
+        }
         description={
           <div className={style.cookingTimeBlock}>
             <DashboardOutlined className={style.cookingTimeIcon} />
