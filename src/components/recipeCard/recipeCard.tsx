@@ -11,7 +11,7 @@ export function RecipeCard() {
   return (
     <Card
       hoverable
-      style={{ width: 240 }}
+      // style={{ width: 240 }}
       cover={<img alt="recipe" src={data?.image} />}
     >
       <Meta

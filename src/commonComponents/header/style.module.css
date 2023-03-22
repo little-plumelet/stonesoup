@@ -1,8 +1,9 @@
 .header {
-  margin: 1rem 6rem;
+  padding: 0 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 120px;
 }
 
 .logo {
