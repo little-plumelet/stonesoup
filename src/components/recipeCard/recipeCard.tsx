@@ -1,23 +1,30 @@
 import { DashboardOutlined, LikeTwoTone } from '@ant-design/icons';
-import { Card, Tooltip } from 'antd';
-import { RECIPE_MOCK_DATA } from './recipeMockData';
+import { Button, Card, Tooltip } from 'antd';
 import style from './style.module.css';
 
 const { Meta } = Card;
 
-export function RecipeCard() {
-  const data = RECIPE_MOCK_DATA;
+interface IRecipeCardProps {
+  id: number;
+  title: string;
+  image: string;
+  readyInMinutes: number;
+  aggregateLikes: number;
+}
 
+export function RecipeCard({
+  id,
+  title,
+  image,
+  readyInMinutes,
+  aggregateLikes,
+}: IRecipeCardProps) {
   return (
-    <Card
-      hoverable
-      // style={{ width: 240 }}
-      cover={<img alt="recipe" src={data?.image} />}
-    >
+    <Card hoverable cover={<img alt="recipe" src={image} />}>
       <Meta
         title={
-          <Tooltip title={data?.title} placement="topLeft">
-            {data?.title}
+          <Tooltip title={title} placement="topLeft">
+            {title}
           </Tooltip>
         }
         description={
@@ -25,14 +32,19 @@ export function RecipeCard() {
             <DashboardOutlined className={style.cookingTimeIcon} />
             <span
               className={style.cookingTime}
-            >{`cooking time - ${data?.readyInMinutes} min`}</span>
+            >{`cooking time - ${readyInMinutes} min`}</span>
           </div>
         }
       />
-      <div className={style.likeBlock}>
-        <span className={style.like}>{data?.aggregateLikes}</span>
-        <LikeTwoTone />
-      </div>
+      <footer className={style.footer}>
+        <div className={style.likeBlock}>
+          <span className={style.like}>{aggregateLikes}</span>
+          <LikeTwoTone />
+        </div>
+        <div className={style.buttonBlock}>
+          <Button key={id}>View recipe</Button>
+        </div>
+      </footer>
     </Card>
   );
 }

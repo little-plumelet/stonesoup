@@ -14,9 +14,20 @@
 .likeBlock {
   display: flex;
   justify-content: flex-end;
-  margin-top: 2rem;
+  align-items: center;
 }
 
 .like {
   margin-right: 0.5rem;
+}
+
+.buttonBlock {
+  display: flex;
+  justify-content: right;
+}
+
+.footer { 
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
 }
