@@ -1,10 +1,14 @@
 import style from './style.module.css';
-import { NavBar } from './parts/NavBar';
+import { NavBar } from './parts/navBar';
 
 export function Header() {
   return (
     <header className={style.header}>
-      <h1 className={style.logo}>StoneSoup</h1>
+      <div className={style.logoBlock}>
+        <img className={style.logoImg} src="pot_logo.png" alt="logo" />
+        <h1 className={style.logo}>StoneSoup</h1>
+      </div>
+
       <NavBar />
     </header>
   );

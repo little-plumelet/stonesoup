@@ -6,6 +6,14 @@
   min-height: 120px;
 }
 
+.logoBlock {
+  display: flex;
+}
+
+.logoImg {
+  max-width: 5rem;
+}
+
 .logo {
   font-family: 'Cookie', sans-serif;
   font-size: 4rem;
