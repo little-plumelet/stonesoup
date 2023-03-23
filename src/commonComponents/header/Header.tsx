@@ -1,5 +1,6 @@
 import style from './style.module.css';
 import { NavBar } from './parts/navBar';
+import { SearchBar } from './parts/searchBar';
 
 export function Header() {
   return (
@@ -10,6 +11,7 @@ export function Header() {
       </div>
 
       <NavBar />
+      <SearchBar />
     </header>
   );
 }
