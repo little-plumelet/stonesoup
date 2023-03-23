@@ -10,6 +10,7 @@ export function SearchBar() {
   return (
     <Search
       placeholder="input search text"
+      enterButton
       allowClear
       onSearch={searchHandle}
       style={{ width: 200 }}

@@ -1,5 +1,5 @@
 .header {
-  padding: 0 8rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,18 +9,18 @@
 .header:hover .logoImg {
   opacity: 30%;
   transition: opacity 1s ease-out, transform 1s ease-out;
-  transform: translateY(6%);
+  transform: translateY(0%);
 }
 
 .logoBlock {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .logoImg {
   max-width: 5rem;
   opacity: 100%;
-  transform: translateY(0%);
+  transform: translateY(-10%);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 

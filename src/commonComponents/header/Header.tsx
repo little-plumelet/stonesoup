@@ -1,3 +1,5 @@
+import { UserOutlined } from '@ant-design/icons';
+import { Button, Space } from 'antd';
 import style from './style.module.css';
 import { NavBar } from './parts/navBar';
 import { SearchBar } from './parts/searchBar';
@@ -11,7 +13,10 @@ export function Header() {
       </div>
 
       <NavBar />
-      <SearchBar />
+      <Space>
+        <SearchBar />
+        <Button shape="circle" icon={<UserOutlined />} />
+      </Space>
     </header>
   );
 }
