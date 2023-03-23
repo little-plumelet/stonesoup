@@ -1,0 +1,36 @@
+
+.dayRecipeCard {
+  background-color: var(--color-light-blue);
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: 'Cookie', sans-serif;
+  font-size: xx-large;
+}
+
+.img {
+  grid-area: img;
+  max-width: 100%;
+}
+
+.desc {
+  grid-area: desc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 0 1rem 2rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "img img img desc desc";
+  min-height: 400px;
+}
+
+.arrow {
+  align-self: flex-end;
+  background-color: var(--color-light-blue);;
+}
