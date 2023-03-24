@@ -1,9 +1,10 @@
 import { Layout } from 'antd';
-import { Content, Footer } from 'antd/es/layout/layout';
 import style from './style.module.css';
 import { Header } from '../../commonComponents/header';
 import { RecipeCardList } from '../../components/recipeCardList';
 import { DayRecipeCard } from '../../components/dayRecipeCard';
+
+const { Content, Footer } = Layout;
 
 export function HomePage() {
   return (
