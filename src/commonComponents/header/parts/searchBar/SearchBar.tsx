@@ -1,12 +1,13 @@
 import { Input, message } from 'antd';
 import axios from 'axios';
+import { BASE_URL } from '../../../../constants';
 
 const { Search } = Input;
 const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
 
 async function searchHandle(value: string) {
   axios
-    .get('https://api.spoonacular.com/recipes/complexSearch', {
+    .get(`${BASE_URL}/recipes/complexSearch`, {
       params: {
         query: value,
         addRecipeInformation: true,
