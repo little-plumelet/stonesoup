@@ -1,6 +1,7 @@
 import { Input } from 'antd';
 import { useAppDispatch } from '../../../../hooks';
 import { searchRecipes } from '../../../../store/searchRecipe.slice';
+import style from './style.module.css';
 
 const { Search } = Input;
 
@@ -9,7 +10,6 @@ export function SearchBar() {
 
   const searchHandle = (searchValue: string) => {
     dispatch(searchRecipes(searchValue));
-    localStorage.setItem('recipeSearchValue', searchValue);
   };
 
   return (
@@ -18,7 +18,7 @@ export function SearchBar() {
       enterButton
       allowClear
       onSearch={searchHandle}
-      style={{ width: 200 }}
+      className={style.searchBar}
     />
   );
 }

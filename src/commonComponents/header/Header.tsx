@@ -14,26 +14,23 @@ export function Header() {
   };
 
   return (
-    <header className={style.header}>
-      <div className={style.logoBlock}>
-        <img className={style.logoImg} src="pot_logo.png" alt="logo" />
-        <h1 className={style.logo}>StoneSoup</h1>
-      </div>
-
-      <NavBar />
-      <Space>
-        {location?.pathname === '/searchresult' ? (
-          <SearchBar />
-        ) : (
+    <header className={style.headerBlock}>
+      <div className={style.header}>
+        <div className={style.logoBlock}>
+          <img className={style.logoImg} src="pot_logo.png" alt="logo" />
+          <h1 className={style.logo}>StoneSoup</h1>
+        </div>
+        <NavBar />
+        <Space>
           <Button
             shape="circle"
             icon={<SearchOutlined />}
             onClick={handleSearchClick}
           />
-        )}
-
-        <Button shape="circle" icon={<UserOutlined />} />
-      </Space>
+          <Button shape="circle" icon={<UserOutlined />} />
+        </Space>
+      </div>
+      <div className={style.searchBar}>{location?.pathname === '/searchresult' && <SearchBar />}</div>
     </header>
   );
 }

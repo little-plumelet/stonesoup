@@ -14,22 +14,29 @@ export function SearchResultPage() {
   } = useAppSelector((state) => state.searchedRecipes);
 
   return (
-    <Layout className="layout">
+    <Layout className={style.layout}>
       <Header />
+      {error && <p className={style.error}>{error}</p>}
+      <Divider />
       <Content className={style.content}>
-        <h2>Search result: </h2>
-        {error && <p className={style.error}>{error}</p>}
-        <Divider />
-        <Space
-          direction="vertical"
-          size="large"
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          {loading && <Spin />}
-          {/* {error && !loading && modal.error({ content: error })} */}
-          <RecipeCardList recipes={recipes} />
-          <Button type="primary">Load more</Button>
-        </Space>
+        {loading && (
+          <div className={style.spinContainer}>
+            <Spin size="large" />
+          </div>
+        )}
+        {!!recipes.length && (
+          <Space
+            direction="vertical"
+            size="large"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <RecipeCardList recipes={recipes} />
+            <Button type="primary">Load more</Button>
+          </Space>
+        )}
+        {!loading && !recipes.length && (
+          <div className={style.noData}>no data</div>
+        )}
       </Content>
       <Footer />
     </Layout>

@@ -1,7 +1,23 @@
+.layout {
+  min-height: 100vh;
+}
+
 .content {
   padding: 1rem var(--left-right-content-padding);
 }
 
 .error {
+  margin-top: 1rem;
   color: red;
+  text-align: center;
+}
+
+.spinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noData {
+  text-align: center;
 }

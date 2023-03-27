@@ -1,9 +1,12 @@
+.headerBlock {
+  min-height: 120px;
+}
+
 .header {
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 120px;
 }
 
 .header:hover .logoImg {
@@ -27,4 +30,8 @@
 .logo {
   font-family: 'Cookie', sans-serif;
   font-size: 4rem;
+}
+
+.searchBar {
+  text-align: center;
 }
