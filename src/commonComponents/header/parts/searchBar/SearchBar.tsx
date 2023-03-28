@@ -12,7 +12,9 @@ export function SearchBar() {
   const dispatch = useAppDispatch();
 
   const searchHandle = (searchValue: string) => {
-    dispatch(searchRecipes({ value: searchValue, offset: 0 }));
+    if (searchValue.length) {
+      dispatch(searchRecipes({ value: searchValue, offset: 0 }));
+    }
     dispatch(addSearchValue(searchValue));
   };
 
