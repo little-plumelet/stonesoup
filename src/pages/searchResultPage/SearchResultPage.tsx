@@ -11,7 +11,13 @@ export function SearchResultPage() {
     list: recipes,
     loading,
     error,
+    offset,
   } = useAppSelector((state) => state.searchedRecipes);
+
+  const HandleLoadMore = () => {
+    console.log('clicked');
+    console.log('offset = ', offset);
+  };
 
   return (
     <Layout className={style.layout}>
@@ -31,7 +37,9 @@ export function SearchResultPage() {
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <RecipeCardList recipes={recipes} />
-            <Button type="primary">Load more</Button>
+            <Button type="primary" onClick={HandleLoadMore}>
+              Load more
+            </Button>
           </Space>
         )}
         {!loading && !recipes.length && (

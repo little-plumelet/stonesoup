@@ -14,39 +14,50 @@ export interface IRecipe {
 
 type SearchedRecipesState = {
   list: IRecipe[];
+  searchValue: string;
   loading: boolean;
+  offset: number;
   error?: string | null;
 };
 
 const initialState: SearchedRecipesState = {
   list: [],
+  searchValue: '',
   loading: false,
+  offset: 0,
   error: null,
 };
 
 export const searchRecipes = createAsyncThunk<
   IRecipe[],
-  string,
+  {
+    value: string;
+    offset: number;
+  },
   { rejectValue: string | null }
->('searchedRecipesStore/searchRecepies', async (value, { rejectWithValue }) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/recipes/complexSearch`, {
-      params: {
-        query: value,
-        addRecipeInformation: true,
-        apiKey: API_KEY,
-        number: 8,
-      },
-    });
-    const data = response?.data?.results;
-    return data;
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      return rejectWithValue(error.message);
+>(
+  'searchedRecipesStore/searchRecepies',
+  async ({ value, offset }, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/recipes/complexSearch`, {
+        params: {
+          query: value,
+          addRecipeInformation: true,
+          apiKey: API_KEY,
+          number: 8,
+          offset,
+        },
+      });
+      const data = response?.data?.results;
+      return data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(error.message);
+      }
+      return rejectWithValue('Unknown error occurred');
     }
-    return rejectWithValue('Unknown error occurred');
   }
-});
+);
 
 const searchedRecipeSlice = createSlice({
   name: 'searchedRecipesStore',
@@ -66,6 +77,7 @@ const searchedRecipeSlice = createSlice({
         state.error = null;
         state.loading = false;
         state.list = action.payload;
+        state.offset = action.payload.length + state.offset;
       });
   },
 });
