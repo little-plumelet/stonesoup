@@ -13,6 +13,7 @@ export function SearchResultPage() {
     loading,
     error,
     offset,
+    totalResults,
     searchValue,
   } = useAppSelector((state) => state.searchedRecipes);
   const dispatch = useAppDispatch();
@@ -39,7 +40,12 @@ export function SearchResultPage() {
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <RecipeCardList recipes={recipes} />
-            <Button loading={loading} type="primary" onClick={HandleLoadMore}>
+            <Button
+              loading={loading}
+              type="primary"
+              onClick={HandleLoadMore}
+              disabled={totalResults === offset}
+            >
               Load more
             </Button>
           </Space>

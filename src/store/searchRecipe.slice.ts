@@ -17,6 +17,7 @@ interface ISearchedRecipesState {
   searchValue: string;
   loading: boolean;
   offset: number;
+  totalResults: number;
   error?: string | null;
 }
 
@@ -25,15 +26,25 @@ interface ISearchRecipesAsyncProps {
   offset: number;
 }
 
+interface ISearchRecipesAsyncResponse {
+  recipes: IRecipe[];
+  offset: number;
+  totalResults: number;
+}
+
 const initialState: ISearchedRecipesState = {
   list: [],
   searchValue: '',
   loading: false,
   offset: 0,
+  totalResults: 0,
   error: null,
 };
 
-async function searchRecipesAsync({ value, offset }: ISearchRecipesAsyncProps) {
+async function searchRecipesAsync({
+  value,
+  offset,
+}: ISearchRecipesAsyncProps): Promise<ISearchRecipesAsyncResponse> {
   try {
     const response = await axios.get(`${BASE_URL}/recipes/complexSearch`, {
       params: {
@@ -44,8 +55,11 @@ async function searchRecipesAsync({ value, offset }: ISearchRecipesAsyncProps) {
         offset,
       },
     });
-    const data = response?.data?.results;
-    return data;
+    return {
+      offset: response?.data?.offset,
+      totalResults: response?.data?.totalResults,
+      recipes: response?.data?.results,
+    };
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw Error(error.message);
@@ -55,7 +69,7 @@ async function searchRecipesAsync({ value, offset }: ISearchRecipesAsyncProps) {
 }
 
 export const searchRecipes = createAsyncThunk<
-  IRecipe[],
+  ISearchRecipesAsyncResponse,
   ISearchRecipesAsyncProps,
   { rejectValue: string }
 >(
@@ -76,7 +90,7 @@ export const searchRecipes = createAsyncThunk<
 );
 
 export const getMoreRecipes = createAsyncThunk<
-  IRecipe[],
+  ISearchRecipesAsyncResponse,
   ISearchRecipesAsyncProps,
   { rejectValue: string }
 >(
@@ -117,8 +131,9 @@ const searchedRecipeSlice = createSlice({
       .addCase(searchRecipes.fulfilled, (state, action) => {
         state.error = null;
         state.loading = false;
-        state.list = action.payload;
-        state.offset = action.payload.length;
+        state.list = action.payload.recipes;
+        state.offset = action.payload.recipes.length;
+        state.totalResults = action.payload.totalResults;
       })
       .addCase(getMoreRecipes.pending, (state) => {
         state.loading = true;
@@ -131,8 +146,8 @@ const searchedRecipeSlice = createSlice({
       .addCase(getMoreRecipes.fulfilled, (state, action) => {
         state.error = null;
         state.loading = false;
-        state.list = [...state.list, ...action.payload];
-        state.offset = action.payload.length + state.offset;
+        state.list = [...state.list, ...action.payload.recipes];
+        state.offset = action.payload.offset + action.payload.recipes.length;
       });
   },
 });
