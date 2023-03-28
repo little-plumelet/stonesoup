@@ -1,16 +1,19 @@
 import { Input } from 'antd';
-import { useAppDispatch, useAppSelector } from '../../../../hooks';
-import { searchRecipes } from '../../../../store/searchRecipe.slice';
+import { useAppDispatch } from '../../../../hooks';
+import {
+  addSearchValue,
+  searchRecipes,
+} from '../../../../store/searchRecipe.slice';
 import style from './style.module.css';
 
 const { Search } = Input;
 
 export function SearchBar() {
   const dispatch = useAppDispatch();
-  const { offset } = useAppSelector((state) => state.searchedRecipes);
 
   const searchHandle = (searchValue: string) => {
-    dispatch(searchRecipes({ value: searchValue, offset }));
+    dispatch(searchRecipes({ value: searchValue, offset: 0 }));
+    dispatch(addSearchValue(searchValue));
   };
 
   return (
