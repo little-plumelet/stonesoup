@@ -1,7 +1,8 @@
 import { Button, Divider, Layout, Space, Spin } from 'antd';
 import { Header } from '../../commonComponents/header';
 import { RecipeCardList } from '../../components/recipeCardList';
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { getMoreRecipes } from '../../store/searchRecipe.slice';
 import style from './style.module.css';
 
 const { Content, Footer } = Layout;
@@ -11,7 +12,15 @@ export function SearchResultPage() {
     list: recipes,
     loading,
     error,
+    offset,
+    totalResults,
+    searchValue,
   } = useAppSelector((state) => state.searchedRecipes);
+  const dispatch = useAppDispatch();
+
+  const HandleLoadMore = () => {
+    dispatch(getMoreRecipes({ value: searchValue, offset }));
+  };
 
   return (
     <Layout className={style.layout}>
@@ -31,7 +40,14 @@ export function SearchResultPage() {
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <RecipeCardList recipes={recipes} />
-            <Button type="primary">Load more</Button>
+            <Button
+              loading={loading}
+              type="primary"
+              onClick={HandleLoadMore}
+              disabled={totalResults === offset}
+            >
+              Load more
+            </Button>
           </Space>
         )}
         {!loading && !recipes.length && (

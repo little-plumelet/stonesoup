@@ -30,7 +30,9 @@ export function Header() {
           <Button shape="circle" icon={<UserOutlined />} />
         </Space>
       </div>
-      <div className={style.searchBar}>{location?.pathname === '/searchresult' && <SearchBar />}</div>
+      <div className={style.searchBar}>
+        {location?.pathname === '/searchresult' && <SearchBar />}
+      </div>
     </header>
   );
 }

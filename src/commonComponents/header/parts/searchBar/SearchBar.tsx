@@ -1,6 +1,9 @@
 import { Input } from 'antd';
 import { useAppDispatch } from '../../../../hooks';
-import { searchRecipes } from '../../../../store/searchRecipe.slice';
+import {
+  addSearchValue,
+  searchRecipes,
+} from '../../../../store/searchRecipe.slice';
 import style from './style.module.css';
 
 const { Search } = Input;
@@ -9,7 +12,10 @@ export function SearchBar() {
   const dispatch = useAppDispatch();
 
   const searchHandle = (searchValue: string) => {
-    dispatch(searchRecipes(searchValue));
+    if (searchValue.length) {
+      dispatch(searchRecipes({ value: searchValue, offset: 0 }));
+    }
+    dispatch(addSearchValue(searchValue));
   };
 
   return (
