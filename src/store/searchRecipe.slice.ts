@@ -12,7 +12,7 @@ export interface IRecipe {
   readyInMinutes: number;
 }
 
-interface ISearchedRecipesState {
+export interface ISearchedRecipesState {
   list: IRecipe[];
   searchValue: string;
   loading: boolean;
