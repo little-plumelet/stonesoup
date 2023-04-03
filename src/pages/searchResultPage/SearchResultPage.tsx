@@ -30,7 +30,7 @@ export function SearchResultPage() {
       <Content className={style.content}>
         {loading && (
           <div className={style.spinContainer}>
-            <Spin size="large" />
+            <Spin size="large" data-testid="spin" />
           </div>
         )}
         {!!recipes.length && (
@@ -45,6 +45,7 @@ export function SearchResultPage() {
               type="primary"
               onClick={HandleLoadMore}
               disabled={totalResults === offset}
+              data-testid="loadMoreButton"
             >
               Load more
             </Button>
