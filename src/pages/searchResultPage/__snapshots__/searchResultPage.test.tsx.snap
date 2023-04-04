@@ -55,6 +55,7 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
               >
                 <button
                   class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-icon-only"
+                  data-testid="searchicon"
                   type="button"
                 >
                   <span
@@ -182,6 +183,7 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-icon-only"
+                data-testid="searchicon"
                 type="button"
               >
                 <span
@@ -366,6 +368,7 @@ exports[`render searchResultPage with recipes 1`] = `
               >
                 <button
                   class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-icon-only"
+                  data-testid="searchicon"
                   type="button"
                 >
                   <span
@@ -633,6 +636,7 @@ exports[`render searchResultPage with recipes 1`] = `
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-icon-only"
+                data-testid="searchicon"
                 type="button"
               >
                 <span

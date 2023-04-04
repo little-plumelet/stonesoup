@@ -1,20 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
-import { Provider } from 'react-redux';
 import * as reactHooks from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
 import { SearchBar } from './SearchBar';
-import { store } from '../../../../store';
 import * as actions from '../../../../store/searchRecipe.slice';
 
 jest.mock('react-redux');
 
 const dispatch = jest.fn();
 jest.spyOn(reactHooks, 'useDispatch').mockReturnValue(dispatch);
-
-// const renderWithContext = (element: React.ReactElement) => {
-//   render(<Provider store={store}>{element}</Provider>);
-// };
 
 describe('searchBar should be rendered', () => {
   it('', () => {

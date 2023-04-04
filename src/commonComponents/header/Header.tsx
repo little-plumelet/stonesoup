@@ -26,6 +26,7 @@ export function Header() {
             shape="circle"
             icon={<SearchOutlined />}
             onClick={handleSearchClick}
+            data-testid="searchicon"
           />
           <Button shape="circle" icon={<UserOutlined />} />
         </Space>
