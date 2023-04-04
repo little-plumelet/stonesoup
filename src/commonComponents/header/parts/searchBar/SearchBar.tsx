@@ -25,6 +25,7 @@ export function SearchBar() {
       allowClear
       onSearch={searchHandle}
       className={style.searchBar}
+      data-testid="searchbar"
     />
   );
 }

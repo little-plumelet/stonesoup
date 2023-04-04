@@ -12,7 +12,7 @@ export interface IRecipe {
   readyInMinutes: number;
 }
 
-interface ISearchedRecipesState {
+export interface ISearchedRecipesState {
   list: IRecipe[];
   searchValue: string;
   loading: boolean;
@@ -73,7 +73,7 @@ export const searchRecipes = createAsyncThunk<
   ISearchRecipesAsyncProps,
   { rejectValue: string }
 >(
-  'searchedRecipesStore/searchRecepies',
+  'searchedRecipesStore/searchRecipes',
   async ({ value, offset }, { rejectWithValue }) => {
     try {
       return await searchRecipesAsync({
@@ -148,6 +148,7 @@ const searchedRecipeSlice = createSlice({
         state.loading = false;
         state.list = [...state.list, ...action.payload.recipes];
         state.offset = action.payload.offset + action.payload.recipes.length;
+        state.totalResults = action.payload.totalResults;
       });
   },
 });
