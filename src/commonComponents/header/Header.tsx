@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import style from './style.module.css';
 import { NavBar } from './parts/navBar';
 import { SearchBar } from './parts/searchBar';
+import logo from '../../assets/pot_logo.png';
 
 export function Header() {
   const location = useLocation();
@@ -17,7 +18,7 @@ export function Header() {
     <header className={style.headerBlock}>
       <div className={style.header}>
         <div className={style.logoBlock}>
-          <img className={style.logoImg} src="pot_logo.png" alt="logo" />
+          <img className={style.logoImg} src={logo} alt="logo" />
           <h1 className={style.logo}>StoneSoup</h1>
         </div>
         <NavBar />

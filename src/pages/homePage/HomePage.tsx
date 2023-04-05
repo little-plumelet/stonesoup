@@ -1,4 +1,4 @@
-import { Layout } from 'antd';
+import { Divider, Layout } from 'antd';
 import style from './style.module.css';
 import { Header } from '../../commonComponents/header';
 import { RecipeCardList } from '../../components/recipeCardList';
@@ -17,6 +17,7 @@ export function HomePage() {
   return (
     <Layout className="layout">
       <Header />
+      <Divider />
       <Content className={style.content}>
         <DayRecipeCard />
         <RecipeCardList recipes={data} />
