@@ -4,20 +4,21 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from '../../commonComponents/header';
 import { BASE_URL } from '../../constants';
+import { IDetailedRecipe } from './interface';
+import { Ingredients } from './parts/ingredients';
 import style from './style.module.css';
 
 const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
 
 const { Content, Sider } = Layout;
-interface IIngredients {
-  name: string;
-  amount: number;
-  unit: string;
-}
+
+/*
+  example with state managing inside component
+*/
+
 export function RecipeInstructionPage() {
-  const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<IDetailedRecipe | null>(null);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
 
@@ -38,11 +39,9 @@ export function RecipeInstructionPage() {
             },
           }
         );
-        console.log(response);
         setData(response?.data);
         setLoading(false);
       } catch (error) {
-        console.log(error);
         if (axios.isAxiosError(error)) {
           setErrorMessage(error.message);
           setLoading(false);
@@ -63,7 +62,7 @@ export function RecipeInstructionPage() {
         <Layout hasSider>
           <Layout>
             <Content>
-              {Array.from({ length: 100 }, (_, index) => (
+              {Array.from({ length: 200 }, (_, index) => (
                 <React.Fragment key={index}>
                   {index % 20 === 0 && index ? 'more' : '...'}
                   <br />
@@ -73,8 +72,7 @@ export function RecipeInstructionPage() {
           </Layout>
           <Sider
             className={style.sider}
-            collapsed={collapsed}
-            onCollapse={(value) => setCollapsed(value)}
+            width={250}
             reverseArrow
             style={{
               position: 'sticky',
@@ -82,9 +80,7 @@ export function RecipeInstructionPage() {
               backgroundColor: 'var(--color-creamson)',
             }}
           >
-            <p>hello</p>
-            <p>hello</p>
-            <p>hello</p>
+            <Ingredients extendedIngredients={data.extendedIngredients} />
           </Sider>
         </Layout>
       )}
