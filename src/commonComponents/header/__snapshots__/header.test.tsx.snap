@@ -17,7 +17,7 @@ exports[`header should render 1`] = `
             <img
               alt="logo"
               class="logoImg"
-              src="pot_logo.png"
+              src=""
             />
             <h1
               class="logo"
@@ -125,7 +125,7 @@ exports[`header should render 1`] = `
           <img
             alt="logo"
             class="logoImg"
-            src="pot_logo.png"
+            src=""
           />
           <h1
             class="logo"

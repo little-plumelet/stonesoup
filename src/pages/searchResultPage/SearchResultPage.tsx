@@ -25,7 +25,6 @@ export function SearchResultPage() {
   return (
     <Layout className={style.layout}>
       <Header />
-      {error && <p className={style.error}>{error}</p>}
       <Divider />
       <Content className={style.content}>
         {loading && (
@@ -33,6 +32,7 @@ export function SearchResultPage() {
             <Spin size="large" data-testid="spin" />
           </div>
         )}
+        {error && <p className={style.error}>{error}</p>}
         {!!recipes.length && (
           <Space
             direction="vertical"
@@ -51,7 +51,7 @@ export function SearchResultPage() {
             </Button>
           </Space>
         )}
-        {!loading && !recipes.length && (
+        {!error && !loading && !recipes.length && (
           <div className={style.noData}>no data</div>
         )}
       </Content>

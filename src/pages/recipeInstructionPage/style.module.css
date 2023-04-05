@@ -1,3 +1,7 @@
+.layout {
+  min-height: 100vh;
+}
+
 .sider {
   overflow: 'auto';
   height: 100vh;
@@ -5,4 +9,10 @@
   left: 0;
   top: 0;
   bottom: 0;
+}
+
+.error {
+  margin-top: 1rem;
+  color: var(--color-error);
+  text-align: center;
 }

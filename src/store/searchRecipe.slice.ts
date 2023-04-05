@@ -63,8 +63,9 @@ async function searchRecipesAsync({
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw Error(error.message);
+    } else {
+      throw Error('Unknown error occurred');
     }
-    throw Error('Unknown error occurred');
   }
 }
 
