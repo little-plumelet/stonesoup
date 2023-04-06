@@ -28,7 +28,8 @@ export function RecipeInstructions({ steps }: IRecipeInstructionsProps) {
               return { description: step };
             })}
             onChange={onStepChange}
-          />{' '}
+            data-testid="steps"
+          />
         </>
       )}
     </>

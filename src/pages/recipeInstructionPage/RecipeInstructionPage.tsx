@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import { Header } from '../../commonComponents/header';
 import { BASE_URL, ETags, SIDER_INGREDIENTS_WITH } from '../../constants';
 import { Ingredients } from '../../components/ingredients';
-import RECIPE_MOCK_DATA from './MOCKDATA.json';
 import style from './style.module.css';
 import { RecipeTagList } from '../../components/recipeTagList';
 import { RecipeInstructions } from '../../components/recipeInstructions/RecipeInstructions';
@@ -58,10 +57,6 @@ export function RecipeInstructionPage() {
     };
     fetchData();
   }, [id]);
-
-  // const data = {
-  //   ...(RECIPE_MOCK_DATA as unknown as IDetailedRecipe),
-  // };
 
   return (
     <Layout hasSider>

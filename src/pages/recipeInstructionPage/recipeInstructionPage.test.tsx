@@ -43,7 +43,7 @@ describe('recipeInstructionPage', () => {
   it('fetch data with error', async () => {
     (axios.get as jest.Mock).mockImplementation(() => {
       return Promise.reject(new Error());
-    })();
+    });
 
     await act(async () => {
       render(
