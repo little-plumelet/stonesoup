@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
-import { IIngredient } from '../../interface';
 import { Ingredients } from './Ingredients';
-import '../../../../../matchMedia';
+import { IIngredient } from '../../interfaces/ingredient.interface';
+import '../../../matchMedia';
 
 const mockIngredients: IIngredient[] = [
   {

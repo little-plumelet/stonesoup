@@ -8,7 +8,7 @@ exports[`ingredients should render 1`] = `
       <h3
         class="ant-typography css-dev-only-do-not-override-mxhywb"
       >
-        Ingridients:
+        Ingredients:
       </h3>
       <div
         class="ant-list ant-list-sm ant-list-split css-dev-only-do-not-override-mxhywb"
@@ -75,7 +75,7 @@ exports[`ingredients should render 1`] = `
     <h3
       class="ant-typography css-dev-only-do-not-override-mxhywb"
     >
-      Ingridients:
+      Ingredients:
     </h3>
     <div
       class="ant-list ant-list-sm ant-list-split css-dev-only-do-not-override-mxhywb"

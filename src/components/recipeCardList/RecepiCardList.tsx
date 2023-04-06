@@ -1,10 +1,13 @@
 import { Col, Row } from 'antd';
-import { IRecipe } from '../../store/searchRecipe.slice';
+import { IDetailedRecipe } from '../../interfaces/recipe.interface';
 import { RecipeCard } from '../recipeCard/recipeCard';
 
-interface IRecipeCardListProps {
-  recipes: IRecipe[];
-}
+type IRecipeCardListProps = {
+  recipes: Pick<
+    IDetailedRecipe,
+    'id' | 'title' | 'image' | 'readyInMinutes' | 'aggregateLikes'
+  >[];
+};
 
 export function RecipeCardList({ recipes }: IRecipeCardListProps) {
   return (

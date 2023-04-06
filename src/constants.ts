@@ -5,3 +5,11 @@ export const THEME = {
   colorInfo: '#ff642f',
   colorError: '#ff1b1f',
 };
+
+export const SIDER_INGREDIENTS_WITH = 250;
+
+export enum ETags {
+  'servings' = 'servings',
+  'preptime' = 'prep time',
+  'likes' = 'likes',
+}
