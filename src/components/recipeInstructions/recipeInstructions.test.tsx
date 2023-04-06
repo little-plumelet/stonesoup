@@ -1,10 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { RecipeInstructions } from './RecipeInstructions';
 import '../../../matchMedia';
-
-interface IRecipeInstructionsProps {
-  steps: IStep[];
-}
 
 const mockSteps = [
   {
