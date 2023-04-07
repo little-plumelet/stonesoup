@@ -17,8 +17,8 @@ export function RecipeInstructions({ steps }: IRecipeInstructionsProps) {
 
   return (
     <>
-      {!steps.length && <Title level={4}>No instructions...</Title>}
-      {!!steps.length && (
+      {!steps?.length && <Title level={4}>No instructions...</Title>}
+      {!!steps?.length && (
         <>
           <Title level={3}>Instructions:</Title>
           <Steps
