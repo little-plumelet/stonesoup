@@ -1,0 +1,13 @@
+.tagBlock {
+  padding: 1rem;
+}
+
+.tagTitle {
+  color: var(--color-gray);
+  font-size: smaller;
+  margin-bottom: 0.3rem;
+}
+
+.tagContent {
+  font-size: large;
+}

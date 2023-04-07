@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", ".eslintrc.cjs"],
+  "include": ["src", ".eslintrc.cjs", "imageMocks"],
   "exclude":[
     "./src/__tests__/**",
     "./src/__mocks__/**",

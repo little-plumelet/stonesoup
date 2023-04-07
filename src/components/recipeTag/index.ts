@@ -1,0 +1,1 @@
+export { RecipeTag } from './RecipeTag';

@@ -20,7 +20,7 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
               <img
                 alt="logo"
                 class="logoImg"
-                src="pot_logo.png"
+                src=""
               />
               <h1
                 class="logo"
@@ -148,7 +148,7 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
             <img
               alt="logo"
               class="logoImg"
-              src="pot_logo.png"
+              src=""
             />
             <h1
               class="logo"
@@ -333,7 +333,7 @@ exports[`render searchResultPage with recipes 1`] = `
               <img
                 alt="logo"
                 class="logoImg"
-                src="pot_logo.png"
+                src=""
               />
               <h1
                 class="logo"
@@ -601,7 +601,7 @@ exports[`render searchResultPage with recipes 1`] = `
             <img
               alt="logo"
               class="logoImg"
-              src="pot_logo.png"
+              src=""
             />
             <h1
               class="logo"

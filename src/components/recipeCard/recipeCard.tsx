@@ -1,16 +1,15 @@
 import { DashboardOutlined, LikeTwoTone } from '@ant-design/icons';
 import { Button, Card, Tooltip } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { IDetailedRecipe } from '../../interfaces/recipe.interface';
 import style from './style.module.css';
 
 const { Meta } = Card;
 
-interface IRecipeCardProps {
-  id: number;
-  title: string;
-  image: string;
-  readyInMinutes: number;
-  aggregateLikes: number;
-}
+type IRecipeCardProps = Pick<
+  IDetailedRecipe,
+  'id' | 'title' | 'image' | 'readyInMinutes' | 'aggregateLikes'
+>;
 
 export function RecipeCard({
   id,
@@ -19,6 +18,12 @@ export function RecipeCard({
   readyInMinutes,
   aggregateLikes,
 }: IRecipeCardProps) {
+  const navigate = useNavigate();
+
+  function showRecipeInstruction() {
+    navigate(`/recipe/${id}`);
+  }
+
   return (
     <Card hoverable cover={<img alt="recipe" src={image} />}>
       <Meta
@@ -42,7 +47,9 @@ export function RecipeCard({
           <LikeTwoTone />
         </div>
         <div className={style.buttonBlock}>
-          <Button key={id}>View recipe</Button>
+          <Button key={id} onClick={showRecipeInstruction}>
+            View recipe
+          </Button>
         </div>
       </footer>
     </Card>
