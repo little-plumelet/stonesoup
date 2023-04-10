@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { BASE_URL } from '../constants';
-
-const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
+import { API_KEY, BASE_URL } from '../constants';
 
 export interface IRecipe {
   id: number;
