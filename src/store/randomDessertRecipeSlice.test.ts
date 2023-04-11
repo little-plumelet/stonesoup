@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { getRandomDessertRecipes } from './randomDessertRecipe.slice';
+import getRandomDessertRecipeReducer, {
+  getRandomDessertRecipes,
+} from './randomDessertRecipe.slice';
 
 jest.mock('axios');
 
@@ -50,7 +52,7 @@ describe('randomDessertRecipeSlice', () => {
 
   it('get recipes rejected', async () => {
     (axios.get as jest.Mock).mockImplementation(() =>
-      Promise.reject(new Error('404'))
+      Promise.reject(new Error())
     );
 
     const dispatch = jest.fn();
@@ -63,11 +65,47 @@ describe('randomDessertRecipeSlice', () => {
 
     const [start, end] = calls;
     expect(start[0].type).toBe(
-      'randomDessertRecipeStore/getRandomDessertRecipes/pending'
+      getRandomDessertRecipes.pending('', {}, {}).type
     );
     expect(end[0].type).toBe(
-      'randomDessertRecipeStore/getRandomDessertRecipes/rejected'
+      getRandomDessertRecipes.rejected(null, '', {}).type
     );
     expect(end[0].payload).toBe('Unknown error occurred');
+  });
+
+  it('getRandomDessertRecipes.pending', () => {
+    const state = getRandomDessertRecipeReducer(
+      { recipes: [], loading: false, error: 'error' },
+      getRandomDessertRecipes.pending('', {}, {})
+    );
+
+    expect(state.loading).toBeTruthy();
+    expect(state.error).toBeFalsy();
+  });
+
+  it('getRandomDessertRecipes.rejected', () => {
+    const state = getRandomDessertRecipeReducer(
+      { recipes: [], loading: false, error: 'error' },
+      getRandomDessertRecipes.rejected(
+        new Error(),
+        '',
+        {},
+        'An unexpected error occured'
+      )
+    );
+
+    expect(state.loading).toBeFalsy();
+    expect(state.error).toBe('An unexpected error occured');
+  });
+
+  it('getRandomDessertRecipes.fulfilled', () => {
+    const state = getRandomDessertRecipeReducer(
+      { recipes: [], loading: true, error: 'error' },
+      getRandomDessertRecipes.fulfilled(mockRecipeList, '', {})
+    );
+
+    expect(state.loading).toBeFalsy();
+    expect(state.error).toBeFalsy();
+    expect(state.recipes).toBe(mockRecipeList);
   });
 });
