@@ -1,5 +1,7 @@
 import axios from 'axios';
-import getRandomVegeterianRecipeReducer, { getRandomVegeterianRecipes } from './randomVegetarianRecipe.slice';
+import getRandomVegetarianRecipeReducer, {
+  getRandomVegetarianRecipes,
+} from './randomVegetarianRecipe.slice';
 
 const mockRecipeList = [
   {
@@ -19,8 +21,8 @@ const mockRecipeList = [
 ];
 
 jest.mock('axios');
-describe('randomVegeterianRecipeSlice', () => {
-  it('get random vegeterian recipes thunk fulfilled', async () => {
+describe('randomVegetarianRecipeSlice', () => {
+  it('get random vegetarian recipes thunk fulfilled', async () => {
     const dispatch = jest.fn();
 
     (axios.get as jest.Mock).mockImplementation(() => {
@@ -31,7 +33,7 @@ describe('randomVegeterianRecipeSlice', () => {
       });
     });
 
-    const thunk = getRandomVegeterianRecipes({});
+    const thunk = getRandomVegetarianRecipes({});
     await thunk(dispatch, () => ({}), {});
 
     const { calls } = dispatch.mock;
@@ -39,22 +41,22 @@ describe('randomVegeterianRecipeSlice', () => {
     expect(calls).toHaveLength(2);
     const [start, end] = calls;
     expect(start[0].type).toBe(
-      getRandomVegeterianRecipes.pending('', {}, {}).type
+      getRandomVegetarianRecipes.pending('', {}, {}).type
     );
     expect(end[0].type).toBe(
-      getRandomVegeterianRecipes.fulfilled([], '', {}).type
+      getRandomVegetarianRecipes.fulfilled([], '', {}).type
     );
     expect(end[0].payload).toBe(mockRecipeList);
   });
 
-  it('get random vegeterian recipes thunk rejected', async () => {
+  it('get random vegetarian recipes thunk rejected', async () => {
     const dispatch = jest.fn();
 
     (axios.get as jest.Mock).mockImplementation(() =>
       Promise.reject(new Error())
     );
 
-    const thunk = getRandomVegeterianRecipes({});
+    const thunk = getRandomVegetarianRecipes({});
     await thunk(dispatch, () => ({}), {});
 
     const { calls } = dispatch.mock;
@@ -62,28 +64,28 @@ describe('randomVegeterianRecipeSlice', () => {
 
     const [start, end] = calls;
     expect(start[0].type).toBe(
-      getRandomVegeterianRecipes.pending('', {}, {}).type
+      getRandomVegetarianRecipes.pending('', {}, {}).type
     );
     expect(end[0].type).toBe(
-      getRandomVegeterianRecipes.rejected(null, '', {}).type
+      getRandomVegetarianRecipes.rejected(null, '', {}).type
     );
     expect(end[0].payload).toBe('Unknown error occurred');
   });
 
-  it('getRandomVegeterianRecipes.pending', () => {
-    const state = getRandomVegeterianRecipeReducer(
+  it('getRandomVegetarianRecipes.pending', () => {
+    const state = getRandomVegetarianRecipeReducer(
       { recipes: [], loading: false, error: 'error' },
-      getRandomVegeterianRecipes.pending('', {}, {})
+      getRandomVegetarianRecipes.pending('', {}, {})
     );
 
     expect(state.loading).toBeTruthy();
     expect(state.error).toBeFalsy();
   });
 
-  it('getRandomVegeterianRecipes.rejected', () => {
-    const state = getRandomVegeterianRecipeReducer(
+  it('getRandomVegetarianRecipes.rejected', () => {
+    const state = getRandomVegetarianRecipeReducer(
       { recipes: [], loading: false, error: 'error' },
-      getRandomVegeterianRecipes.rejected(
+      getRandomVegetarianRecipes.rejected(
         new Error(),
         '',
         {},
@@ -95,10 +97,10 @@ describe('randomVegeterianRecipeSlice', () => {
     expect(state.error).toBe('An unexpected error occured');
   });
 
-  it('getRandomVegeterianRecipes.fulfilled', () => {
-    const state = getRandomVegeterianRecipeReducer(
+  it('getRandomVegetarianRecipes.fulfilled', () => {
+    const state = getRandomVegetarianRecipeReducer(
       { recipes: [], loading: true, error: 'error' },
-      getRandomVegeterianRecipes.fulfilled(mockRecipeList, '', {})
+      getRandomVegetarianRecipes.fulfilled(mockRecipeList, '', {})
     );
 
     expect(state.loading).toBeFalsy();

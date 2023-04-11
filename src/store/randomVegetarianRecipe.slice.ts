@@ -2,24 +2,24 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { Recipe } from '../interfaces/recipe.interface';
 import { getRandomRecipesAsync, IGetRandomRecipesPros } from './getFunctions';
 
-interface IVegeterianRecipeState {
+interface IVegetarianRecipeState {
   recipes: Recipe[];
   loading: boolean;
   error?: string | null;
 }
 
-const initialState: IVegeterianRecipeState = {
+const initialState: IVegetarianRecipeState = {
   recipes: [],
   loading: false,
   error: null,
 };
 
-export const getRandomVegeterianRecipes = createAsyncThunk<
+export const getRandomVegetarianRecipes = createAsyncThunk<
   Recipe[],
   Partial<IGetRandomRecipesPros>,
   { rejectValue: string }
 >(
-  'randomVegetarianRecipeStore/getRandomVegeterianRecipes',
+  'randomVegetarianRecipeStore/getRandomVegetarianRecipes',
   async ({ tags = ['vegetarian'], number = 4 }, { rejectWithValue }) => {
     try {
       return await getRandomRecipesAsync({ tags, number });
@@ -38,16 +38,16 @@ const randomVegetarianRecipeSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getRandomVegeterianRecipes.pending, (state) => {
+      .addCase(getRandomVegetarianRecipes.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getRandomVegeterianRecipes.fulfilled, (state, action) => {
+      .addCase(getRandomVegetarianRecipes.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
         state.recipes = action.payload;
       })
-      .addCase(getRandomVegeterianRecipes.rejected, (state, action) => {
+      .addCase(getRandomVegetarianRecipes.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

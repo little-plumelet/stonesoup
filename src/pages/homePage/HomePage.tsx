@@ -5,7 +5,7 @@ import { Header } from '../../commonComponents/header';
 import { DayRecipeCard } from '../../components/dayRecipeCard';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getRandomDessertRecipes } from '../../store/randomDessertRecipe.slice';
-import { getRandomVegeterianRecipes } from '../../store/randomVegetarianRecipe.slice';
+import { getRandomVegetarianRecipes } from '../../store/randomVegetarianRecipe.slice';
 import { RecipeBlock } from './parts/recipeBlock';
 
 const { Content, Footer } = Layout;
@@ -20,12 +20,12 @@ export function HomePage() {
     recipes: vegeterianRecipes,
     loading: vegeterianLoading,
     error: vegeterianError,
-  } = useAppSelector((state) => state.randomVegeterianRecipes);
+  } = useAppSelector((state) => state.randomVegetarianRecipes);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getRandomDessertRecipes({}));
-    dispatch(getRandomVegeterianRecipes({}));
+    dispatch(getRandomVegetarianRecipes({}));
   }, [dispatch]);
 
   return (
