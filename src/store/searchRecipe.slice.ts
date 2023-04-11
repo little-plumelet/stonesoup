@@ -1,17 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { API_KEY, BASE_URL } from '../constants';
-
-export interface IRecipe {
-  id: number;
-  title: string;
-  aggregateLikes: number;
-  image: string;
-  readyInMinutes: number;
-}
+import { Recipe } from '../interfaces/recipe.interface';
 
 export interface ISearchedRecipesState {
-  list: IRecipe[];
+  list: Recipe[];
   searchValue: string;
   loading: boolean;
   offset: number;
@@ -25,7 +18,7 @@ interface ISearchRecipesAsyncProps {
 }
 
 interface ISearchRecipesAsyncResponse {
-  recipes: IRecipe[];
+  recipes: Recipe[];
   offset: number;
   totalResults: number;
 }
