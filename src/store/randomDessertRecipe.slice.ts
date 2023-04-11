@@ -1,11 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { IDetailedRecipe } from '../interfaces/recipe.interface';
+import { Recipe } from '../interfaces/recipe.interface';
 import { getRandomRecipesAsync, IGetRandomRecipesPros } from './getFunctions';
-
-type Recipe = Pick<
-  IDetailedRecipe,
-  'id' | 'title' | 'aggregateLikes' | 'image' | 'readyInMinutes'
->;
 
 export interface IdessertRecipesState {
   recipes: Recipe[];

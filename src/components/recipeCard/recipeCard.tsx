@@ -1,7 +1,7 @@
 import { DashboardOutlined, LikeTwoTone } from '@ant-design/icons';
 import { Button, Card, Tooltip } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { IDetailedRecipe } from '../../interfaces/recipe.interface';
+import { IDetailedRecipe } from '../../interfaces/detailedRecipe.interface';
 import style from './style.module.css';
 
 const { Meta } = Card;

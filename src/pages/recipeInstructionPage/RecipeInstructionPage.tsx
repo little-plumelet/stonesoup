@@ -8,7 +8,7 @@ import { Ingredients } from '../../components/ingredients';
 import style from './style.module.css';
 import { RecipeTagList } from '../../components/recipeTagList';
 import { RecipeInstructions } from '../../components/recipeInstructions/RecipeInstructions';
-import { IDetailedRecipe } from '../../interfaces/recipe.interface';
+import { IDetailedRecipe } from '../../interfaces/detailedRecipe.interface';
 
 const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
 

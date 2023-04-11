@@ -1,5 +1,5 @@
 import { Col, Row } from 'antd';
-import { IDetailedRecipe } from '../../interfaces/recipe.interface';
+import { IDetailedRecipe } from '../../interfaces/detailedRecipe.interface';
 import { RecipeCard } from '../recipeCard/recipeCard';
 
 type IRecipeCardListProps = {

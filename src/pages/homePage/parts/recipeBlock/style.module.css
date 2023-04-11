@@ -1,0 +1,11 @@
+.spinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  margin-top: 1rem;
+  color: var(--color-error);
+  text-align: center;
+}
