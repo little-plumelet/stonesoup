@@ -25,7 +25,11 @@ export function RecipeBlock({
           <Spin size="large" data-testid="spin" />
         </div>
       )}
-      {error && <p className={style.error}>{error}</p>}
+      {error && (
+        <p data-testid="error" className={style.error}>
+          {error}
+        </p>
+      )}
       {!!recipes.length && <RecipeCardList recipes={recipes} />}
     </>
   );
