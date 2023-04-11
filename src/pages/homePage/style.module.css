@@ -5,3 +5,9 @@
 .content {
   padding: 0 var(--left-right-content-padding);
 }
+
+.recipeBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}

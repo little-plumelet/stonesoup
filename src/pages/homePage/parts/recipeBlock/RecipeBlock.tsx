@@ -18,7 +18,7 @@ export function RecipeBlock({
   error,
 }: IRecipeBlockProps) {
   return (
-    <>
+    <div>
       <Title level={3}>{title}</Title>
       {loading && (
         <div className={style.spinContainer}>
@@ -31,6 +31,6 @@ export function RecipeBlock({
         </p>
       )}
       {!!recipes.length && <RecipeCardList recipes={recipes} />}
-    </>
+    </div>
   );
 }

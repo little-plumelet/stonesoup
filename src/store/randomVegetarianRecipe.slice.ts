@@ -2,25 +2,25 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { Recipe } from '../interfaces/recipe.interface';
 import { getRandomRecipesAsync, IGetRandomRecipesPros } from './getFunctions';
 
-export interface IDessertRecipesState {
+interface IVegeterianRecipeState {
   recipes: Recipe[];
   loading: boolean;
   error?: string | null;
 }
 
-const initialState: IDessertRecipesState = {
+const initialState: IVegeterianRecipeState = {
   recipes: [],
   loading: false,
   error: null,
 };
 
-export const getRandomDessertRecipes = createAsyncThunk<
+export const getRandomVegeterianRecipes = createAsyncThunk<
   Recipe[],
   Partial<IGetRandomRecipesPros>,
   { rejectValue: string }
 >(
-  'randomDessertRecipeStore/getRandomDessertRecipes',
-  async ({ tags = ['dessert'], number = 4 }, { rejectWithValue }) => {
+  'randomVegetarianRecipeStore/getRandomVegeterianRecipes',
+  async ({ tags = ['vegetarian'], number = 4 }, { rejectWithValue }) => {
     try {
       return await getRandomRecipesAsync({ tags, number });
     } catch (error) {
@@ -32,26 +32,26 @@ export const getRandomDessertRecipes = createAsyncThunk<
   }
 );
 
-const randomDessertRecipeSlice = createSlice({
-  name: 'randomDesserRecipeStore',
+const randomVegetarianRecipeSlice = createSlice({
+  name: 'randomVegetarianRecipeStore',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getRandomDessertRecipes.pending, (state) => {
-        state.error = null;
+      .addCase(getRandomVegeterianRecipes.pending, (state) => {
         state.loading = true;
-      })
-      .addCase(getRandomDessertRecipes.fulfilled, (state, action) => {
         state.error = null;
+      })
+      .addCase(getRandomVegeterianRecipes.fulfilled, (state, action) => {
         state.loading = false;
+        state.error = null;
         state.recipes = action.payload;
       })
-      .addCase(getRandomDessertRecipes.rejected, (state, action) => {
-        state.error = action.payload;
+      .addCase(getRandomVegeterianRecipes.rejected, (state, action) => {
         state.loading = false;
+        state.error = action.payload;
       });
   },
 });
 
-export default randomDessertRecipeSlice.reducer;
+export default randomVegetarianRecipeSlice.reducer;

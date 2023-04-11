@@ -5,6 +5,7 @@ import { Header } from '../../commonComponents/header';
 import { DayRecipeCard } from '../../components/dayRecipeCard';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getRandomDessertRecipes } from '../../store/randomDessertRecipe.slice';
+import { getRandomVegeterianRecipes } from '../../store/randomVegetarianRecipe.slice';
 import { RecipeBlock } from './parts/recipeBlock';
 
 const { Content, Footer } = Layout;
@@ -15,10 +16,16 @@ export function HomePage() {
     loading: dessertLoading,
     error: dessertError,
   } = useAppSelector((state) => state.randomDessertRecipes);
+  const {
+    recipes: vegeterianRecipes,
+    loading: vegeterianLoading,
+    error: vegeterianError,
+  } = useAppSelector((state) => state.randomVegeterianRecipes);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getRandomDessertRecipes({}));
+    dispatch(getRandomVegeterianRecipes({}));
   }, [dispatch]);
 
   return (
@@ -27,21 +34,20 @@ export function HomePage() {
       <Divider />
       <Content className={style.content}>
         <DayRecipeCard />
-        <RecipeBlock
-          loading={dessertLoading}
-          error={dessertError}
-          recipes={dessertRecipes}
-          title="Sweet tooth"
-        />
-        {/*
-        <Title level={3}>Vegeterian</Title>
-        {/* {loading && (
-          <div className={style.spinContainer}>
-            <Spin size="large" data-testid="spin" />
-          </div>
-        )}
-        {error && <p className={style.error}>{error}</p>}
-        {!!recipes.length && <RecipeCardList recipes={recipes} />} */}
+        <div className={style.recipeBlocks}>
+          <RecipeBlock
+            loading={dessertLoading}
+            error={dessertError}
+            recipes={dessertRecipes}
+            title="Sweet tooth"
+          />
+          <RecipeBlock
+            loading={vegeterianLoading}
+            error={vegeterianError}
+            recipes={vegeterianRecipes}
+            title="Vegeterian"
+          />
+        </div>
       </Content>
       <Footer />
     </Layout>
