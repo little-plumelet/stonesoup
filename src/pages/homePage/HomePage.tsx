@@ -31,7 +31,7 @@ export function HomePage() {
   return (
     <Layout className={style.layout}>
       <Header />
-      <Divider />
+      <Divider style={{ marginTop: '0' }} />
       <Content className={style.content}>
         <DayRecipeCard />
         <div className={style.recipeBlocks}>
