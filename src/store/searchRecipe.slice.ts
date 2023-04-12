@@ -1,19 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { BASE_URL } from '../constants';
-
-const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
-
-export interface IRecipe {
-  id: number;
-  title: string;
-  aggregateLikes: number;
-  image: string;
-  readyInMinutes: number;
-}
+import { API_KEY, BASE_URL } from '../constants';
+import { Recipe } from '../interfaces/recipe.interface';
 
 export interface ISearchedRecipesState {
-  list: IRecipe[];
+  list: Recipe[];
   searchValue: string;
   loading: boolean;
   offset: number;
@@ -27,7 +18,7 @@ interface ISearchRecipesAsyncProps {
 }
 
 interface ISearchRecipesAsyncResponse {
-  recipes: IRecipe[];
+  recipes: Recipe[];
   offset: number;
   totalResults: number;
 }

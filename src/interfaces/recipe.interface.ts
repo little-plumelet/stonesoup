@@ -1,13 +1,6 @@
-import { IIngredient } from './ingredient.interface';
-import { Iinstrctions } from './instruction.interface';
+import { IDetailedRecipe } from './detailedRecipe.interface';
 
-export interface IDetailedRecipe {
-  id: number;
-  title: string;
-  aggregateLikes: number;
-  image: string;
-  readyInMinutes: number;
-  servings: number;
-  extendedIngredients: IIngredient[];
-  analyzedInstructions: Iinstrctions[];
-}
+export type Recipe = Pick<
+  IDetailedRecipe,
+  'id' | 'title' | 'aggregateLikes' | 'image' | 'readyInMinutes'
+>;
