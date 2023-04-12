@@ -45,7 +45,7 @@ export function HomePage() {
             loading={vegeterianLoading}
             error={vegeterianError}
             recipes={vegeterianRecipes}
-            title="Vegeterian"
+            title="Vegetarian"
           />
         </div>
       </Content>
