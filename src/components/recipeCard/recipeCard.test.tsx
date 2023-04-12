@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { MemoryRouter, Router, useNavigate } from 'react-router-dom';
-import { RecipeCard } from './RecipeCard';
+import { RecipeCard } from '.';
 
 const mockRecipe = {
   id: 716428,

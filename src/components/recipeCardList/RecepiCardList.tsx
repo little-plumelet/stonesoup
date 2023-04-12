@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 import { IDetailedRecipe } from '../../interfaces/detailedRecipe.interface';
-import { RecipeCard } from '../recipeCard/RecipeCard';
+import { RecipeCard } from '../recipeCard';
 
 type IRecipeCardListProps = {
   recipes: Pick<
