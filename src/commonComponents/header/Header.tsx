@@ -20,6 +20,7 @@ export function Header() {
         <div className={style.logoBlock}>
           <img className={style.logoImg} src={logo} alt="logo" />
           <h1 className={style.logo}>StoneSoup</h1>
+          <h1 className={style.logoClone}>StoneSoup</h1>
         </div>
         <NavBar />
         <Space>
