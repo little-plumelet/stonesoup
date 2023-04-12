@@ -1,4 +1,4 @@
-##### To see the project go to [www.stonesoup.com] https://stonesoup.onrender.com/
+##### To see the project go to [www.stonesoup.com](https://stonesoup.onrender.com/)
 ##### Materials used to create this project:
   - add vite, eslint & prettier using [video tutorial](https://www.youtube.com/watch?app=desktop&v=cchqeWY0Nak)
 
