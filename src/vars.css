@@ -5,7 +5,8 @@
   --color-gray: rgba(0,0,0,.45);
   --color-error: rgb(255, 0, 0);
 
-  --left-right-content-padding: 8rem;
+  --font-logo: 'Cookie', sans-serif;
 
+  --left-right-content-padding: 8rem;
   --sider-ingredients-width: 250px;
 }

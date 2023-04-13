@@ -7,8 +7,9 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getRandomDessertRecipes } from '../../store/randomDessertRecipe.slice';
 import { getRandomVegetarianRecipes } from '../../store/randomVegetarianRecipe.slice';
 import { RecipeBlock } from './parts/recipeBlock';
+import { Footer } from '../../commonComponents/footer';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 export function HomePage() {
   const {

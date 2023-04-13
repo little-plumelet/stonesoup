@@ -1,0 +1,16 @@
+.footer {
+  padding: 2rem 6rem;
+}
+
+.logoBlock {
+  max-width: 15rem;
+}
+.logo {
+  font-family: var(--font-logo);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.logoContent {
+  color: var(--color-gray);
+}
