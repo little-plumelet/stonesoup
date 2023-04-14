@@ -27,6 +27,11 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
               >
                 StoneSoup
               </h1>
+              <h1
+                class="logoClone"
+              >
+                StoneSoup
+              </h1>
             </div>
             <nav
               class="nav"
@@ -37,13 +42,13 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
                 class="navLink, active"
                 href="/"
               >
-                home
+                Home
               </a>
               <a
                 class="navLink, pending"
                 href="/about"
               >
-                about us
+                About Us
               </a>
             </nav>
             <div
@@ -155,6 +160,11 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
             >
               StoneSoup
             </h1>
+            <h1
+              class="logoClone"
+            >
+              StoneSoup
+            </h1>
           </div>
           <nav
             class="nav"
@@ -165,13 +175,13 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
               class="navLink, active"
               href="/"
             >
-              home
+              Home
             </a>
             <a
               class="navLink, pending"
               href="/about"
             >
-              about us
+              About Us
             </a>
           </nav>
           <div
@@ -340,6 +350,11 @@ exports[`render searchResultPage with recipes 1`] = `
               >
                 StoneSoup
               </h1>
+              <h1
+                class="logoClone"
+              >
+                StoneSoup
+              </h1>
             </div>
             <nav
               class="nav"
@@ -350,13 +365,13 @@ exports[`render searchResultPage with recipes 1`] = `
                 class="navLink, active"
                 href="/"
               >
-                home
+                Home
               </a>
               <a
                 class="navLink, pending"
                 href="/about"
               >
-                about us
+                About Us
               </a>
             </nav>
             <div
@@ -608,6 +623,11 @@ exports[`render searchResultPage with recipes 1`] = `
             >
               StoneSoup
             </h1>
+            <h1
+              class="logoClone"
+            >
+              StoneSoup
+            </h1>
           </div>
           <nav
             class="nav"
@@ -618,13 +638,13 @@ exports[`render searchResultPage with recipes 1`] = `
               class="navLink, active"
               href="/"
             >
-              home
+              Home
             </a>
             <a
               class="navLink, pending"
               href="/about"
             >
-              about us
+              About Us
             </a>
           </nav>
           <div

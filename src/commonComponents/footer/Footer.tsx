@@ -46,7 +46,7 @@ export function Footer() {
       <Divider />
       <div className={style.footerBlock}>
         <p className={style.copyright}>
-          &#169; Stonesoup - all rights reserved
+          &#169; 2023 Stonesoup - all rights reserved
         </p>
         <div className={style.socialNetBlock}>
           <InstagramOutlined className={style.icon} />
