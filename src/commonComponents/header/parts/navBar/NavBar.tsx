@@ -1,24 +1,25 @@
 import { NavLink } from 'react-router-dom';
+import { routes } from '../../../../constants-routes';
 import style from './style.module.css';
 
 export function NavBar() {
   return (
     <nav className={style.nav} id="nav">
       <NavLink
-        to="/"
+        to={routes.home.path}
         className={({ isActive }) =>
           `${style.navLink}, ${isActive ? style.active : style.pending}`
         }
       >
-        home
+        {routes.home.title}
       </NavLink>
       <NavLink
-        to="/about"
+        to={routes.about.path}
         className={({ isActive }) =>
           `${style.navLink}, ${isActive ? style.active : style.pending}`
         }
       >
-        about us
+        {routes.about.title}
       </NavLink>
     </nav>
   );

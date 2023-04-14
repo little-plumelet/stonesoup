@@ -1,29 +1,36 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { routes } from './constants-routes';
 import { AboutPage } from './pages/aboutPage';
 import { ErrorPage } from './pages/errorPage';
 import { HomePage } from './pages/homePage';
 import { RecipeInstructionPage } from './pages/recipeInstructionPage';
 import { SearchResultPage } from './pages/searchResultPage';
 
-export const router = createBrowserRouter([
+const completeRoutes = [
   {
-    path: '/',
+    ...routes.home,
     element: <HomePage />,
   },
   {
-    path: '/about',
+    ...routes.about,
     element: <AboutPage />,
   },
   {
-    path: '/searchresult',
+    ...routes.contacts,
+    element: <div />,
+  },
+  {
+    ...routes.searchResult,
     element: <SearchResultPage />,
   },
   {
-    path: '/recipe/:id',
+    ...routes.detailedRecipe,
     element: <RecipeInstructionPage />,
   },
   {
-    path: '*',
+    ...routes.other,
     element: <ErrorPage />,
   },
-]);
+];
+
+export const router = createBrowserRouter(completeRoutes);
