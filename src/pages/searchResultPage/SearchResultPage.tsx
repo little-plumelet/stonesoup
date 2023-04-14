@@ -1,11 +1,12 @@
 import { Button, Divider, Layout, Space, Spin } from 'antd';
+import { Footer } from '../../commonComponents/footer';
 import { Header } from '../../commonComponents/header';
 import { RecipeCardList } from '../../components/recipeCardList';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getMoreRecipes } from '../../store/searchRecipe.slice';
 import style from './style.module.css';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 export function SearchResultPage() {
   const {
