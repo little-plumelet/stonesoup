@@ -1,8 +1,14 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .errorPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
 }
 
 .errorTitle {
