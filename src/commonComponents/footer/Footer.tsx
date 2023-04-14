@@ -1,4 +1,8 @@
-import { FacebookOutlined, InstagramOutlined, YoutubeOutlined } from '@ant-design/icons';
+import {
+  FacebookOutlined,
+  InstagramOutlined,
+  YoutubeOutlined,
+} from '@ant-design/icons';
 import { Divider } from 'antd';
 import { Link } from 'react-router-dom';
 import { routes } from '../../constants-routes';
