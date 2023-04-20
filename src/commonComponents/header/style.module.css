@@ -3,7 +3,7 @@
 }
 
 .header {
-  padding: 2rem 2rem;
+  padding: 2rem 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,14 +25,14 @@
 }
 
 .logo {
-  font-family: 'Cookie', sans-serif;
+  font-family: var(--font-logo);
   font-size: 4rem;
   transform: translateY(-200%);
   transition: transform 1s ease-out;
 }
 
 .logoClone {
-  font-family: 'Cookie', sans-serif;
+  font-family:  var(--font-logo);
   font-size: 4rem;
   opacity: 40%;
   position: absolute;

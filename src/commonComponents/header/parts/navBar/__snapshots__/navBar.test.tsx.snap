@@ -14,13 +14,13 @@ exports[`navbar should be rendered 1`] = `
           class="navLink, active"
           href="/"
         >
-          home
+          Home
         </a>
         <a
           class="navLink, pending"
           href="/about"
         >
-          about us
+          About Us
         </a>
       </nav>
     </div>
@@ -35,13 +35,13 @@ exports[`navbar should be rendered 1`] = `
         class="navLink, active"
         href="/"
       >
-        home
+        Home
       </a>
       <a
         class="navLink, pending"
         href="/about"
       >
-        about us
+        About Us
       </a>
     </nav>
   </div>,

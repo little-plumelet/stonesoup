@@ -3,7 +3,7 @@
 }
 
 .content {
-  padding: 1rem var(--left-right-content-padding);
+  padding: 3rem var(--left-right-content-padding) var(--bottom-content-padding) var(--left-right-content-padding);
 }
 
 .error {

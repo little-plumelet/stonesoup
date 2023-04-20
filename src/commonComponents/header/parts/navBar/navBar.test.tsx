@@ -22,10 +22,10 @@ describe('navbar', () => {
       </Router>
     );
 
-    fireEvent.click(screen.getByText('home'));
+    fireEvent.click(screen.getByText('Home'));
     expect(history.location.pathname).toBe('/');
 
-    fireEvent.click(screen.getByText('about us'));
+    fireEvent.click(screen.getByText('About Us'));
     expect(history.location.pathname).toBe('/about');
   });
 });

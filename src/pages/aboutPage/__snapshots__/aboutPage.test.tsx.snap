@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page should render 1`] = `
+exports[`About page should render 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -122,76 +122,9 @@ exports[`Home page should render 1`] = `
           class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
         >
           <div
-            class="ant-card ant-card-bordered dayRecipeCard css-dev-only-do-not-override-mxhywb"
+            style="text-align: center;"
           >
-            <div
-              class="ant-card-body"
-            >
-              <div
-                class="content"
-              >
-                <div
-                  class="img"
-                  style="background-image: url(https://spoonacular.com/recipeImages/632625-556x370.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"
-                />
-                <div
-                  class="desc"
-                >
-                  <div>
-                    <p>
-                      Recipe of the day
-                    </p>
-                    <h2
-                      class="title"
-                    >
-                      Apple-Cheesecake Tart with Salted Caramel Glaze
-                    </h2>
-                  </div>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-lg ant-btn-icon-only arrow"
-                    type="button"
-                  >
-                    <span
-                      aria-label="arrow-right"
-                      class="anticon anticon-arrow-right"
-                      role="img"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        data-icon="arrow-right"
-                        fill="currentColor"
-                        focusable="false"
-                        height="1em"
-                        viewBox="64 64 896 896"
-                        width="1em"
-                      >
-                        <path
-                          d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 000-48.4z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="recipeBlocks"
-          >
-            <div>
-              <h3
-                class="ant-typography css-dev-only-do-not-override-mxhywb"
-              >
-                Sweet tooth
-              </h3>
-            </div>
-            <div>
-              <h3
-                class="ant-typography css-dev-only-do-not-override-mxhywb"
-              >
-                Vegetarian
-              </h3>
-            </div>
+            AboutPage...
           </div>
         </main>
         <footer
@@ -465,76 +398,9 @@ exports[`Home page should render 1`] = `
         class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
       >
         <div
-          class="ant-card ant-card-bordered dayRecipeCard css-dev-only-do-not-override-mxhywb"
+          style="text-align: center;"
         >
-          <div
-            class="ant-card-body"
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="img"
-                style="background-image: url(https://spoonacular.com/recipeImages/632625-556x370.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"
-              />
-              <div
-                class="desc"
-              >
-                <div>
-                  <p>
-                    Recipe of the day
-                  </p>
-                  <h2
-                    class="title"
-                  >
-                    Apple-Cheesecake Tart with Salted Caramel Glaze
-                  </h2>
-                </div>
-                <button
-                  class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-lg ant-btn-icon-only arrow"
-                  type="button"
-                >
-                  <span
-                    aria-label="arrow-right"
-                    class="anticon anticon-arrow-right"
-                    role="img"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="arrow-right"
-                      fill="currentColor"
-                      focusable="false"
-                      height="1em"
-                      viewBox="64 64 896 896"
-                      width="1em"
-                    >
-                      <path
-                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 000-48.4z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="recipeBlocks"
-        >
-          <div>
-            <h3
-              class="ant-typography css-dev-only-do-not-override-mxhywb"
-            >
-              Sweet tooth
-            </h3>
-          </div>
-          <div>
-            <h3
-              class="ant-typography css-dev-only-do-not-override-mxhywb"
-            >
-              Vegetarian
-            </h3>
-          </div>
+          AboutPage...
         </div>
       </main>
       <footer

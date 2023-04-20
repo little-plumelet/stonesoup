@@ -1,13 +1,8 @@
 .layout {
   min-height: 100vh;
+  background-color: white;
 }
 
 .content {
   padding: var(--top-content-padding) var(--left-right-content-padding) var(--bottom-content-padding) var(--left-right-content-padding);
-}
-
-.recipeBlocks {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
 }

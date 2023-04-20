@@ -1,4 +1,4 @@
-import { Divider, Layout } from 'antd';
+import { Layout } from 'antd';
 import { useEffect } from 'react';
 import style from './style.module.css';
 import { Header } from '../../commonComponents/header';
@@ -7,8 +7,9 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getRandomDessertRecipes } from '../../store/randomDessertRecipe.slice';
 import { getRandomVegetarianRecipes } from '../../store/randomVegetarianRecipe.slice';
 import { RecipeBlock } from './parts/recipeBlock';
+import { Footer } from '../../commonComponents/footer';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 export function HomePage() {
   const {
@@ -31,7 +32,6 @@ export function HomePage() {
   return (
     <Layout className={style.layout}>
       <Header />
-      <Divider style={{ marginTop: '0' }} />
       <Content className={style.content}>
         <DayRecipeCard />
         <div className={style.recipeBlocks}>

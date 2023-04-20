@@ -9,6 +9,7 @@ import style from './style.module.css';
 import { RecipeTagList } from '../../components/recipeTagList';
 import { RecipeInstructions } from '../../components/recipeInstructions/RecipeInstructions';
 import { IDetailedRecipe } from '../../interfaces/detailedRecipe.interface';
+import { Footer } from '../../commonComponents/footer';
 
 const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
 
@@ -88,6 +89,7 @@ export function RecipeInstructionPage() {
             <RecipeInstructions steps={data.analyzedInstructions[0]?.steps} />
           </Content>
         )}
+        <Footer />
       </Layout>
       <Sider
         className={style.sider}

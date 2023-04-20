@@ -1,0 +1,53 @@
+.footer {
+  padding: var(--top-content-padding) var(--left-right-content-padding);
+  background-color: var(---color-light-gray);
+}
+
+.footerBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoBlock {
+  max-width: 15rem;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.logoContent {
+  color: var(--color-gray);
+}
+
+.navBlock {
+  display: flex;
+  gap: 6rem
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
+}
+
+.link {
+  color: var(--color-gray);
+}
+
+.copyright {
+  color: var(--color-gray);
+}
+
+.socialNetBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.icon {
+  color: var(--color-gray);
+  font-size: large;
+}
