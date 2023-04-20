@@ -6,11 +6,10 @@
 .content {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem 0 var(--left-right-content-padding);
+  padding: var(--top-content-padding) 1rem var(--bottom-content-padding) var(--left-right-content-padding);
 }
 
 .title {
-  /* font-family: 'Cookie', sans-serif; */
   font-size: xx-large;
   padding: 1rem 0;
 }

@@ -5,6 +5,7 @@ export const THEME = {
   colorPrimary: '#ff642f',
   colorInfo: '#ff642f',
   colorError: '#ff1b1f',
+  colorBgLayout: 'white',
 };
 
 export const SIDER_INGREDIENTS_WITH = 250;

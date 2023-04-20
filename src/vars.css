@@ -2,11 +2,14 @@
   --primary-color-red: #ff642f;
   --color-creamson: #ffd7c9;
   --color-light-blue: #e3f1ff;
+  --color-light-gray: #f9f9f9;
   --color-gray: rgba(0,0,0,.45);
   --color-error: rgb(255, 0, 0);
 
   --font-logo: 'Cookie', sans-serif;
 
   --left-right-content-padding: 8rem;
+  --top-content-padding: 2rem;
+  --bottom-content-padding: 8rem;
   --sider-ingredients-width: 250px;
 }

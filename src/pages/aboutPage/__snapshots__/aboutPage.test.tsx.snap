@@ -118,10 +118,6 @@ exports[`About page should render 1`] = `
             class="searchBar"
           />
         </header>
-        <div
-          class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-          role="separator"
-        />
         <main
           class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
         >
@@ -398,10 +394,6 @@ exports[`About page should render 1`] = `
           class="searchBar"
         />
       </header>
-      <div
-        class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-        role="separator"
-      />
       <main
         class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
       >

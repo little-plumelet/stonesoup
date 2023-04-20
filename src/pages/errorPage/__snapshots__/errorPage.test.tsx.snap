@@ -119,10 +119,6 @@ exports[`error page should render 1`] = `
               class="searchBar"
             />
           </header>
-          <div
-            class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-            role="separator"
-          />
         </div>
         <div
           class="errorPage"
@@ -416,10 +412,6 @@ exports[`error page should render 1`] = `
             class="searchBar"
           />
         </header>
-        <div
-          class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-          role="separator"
-        />
       </div>
       <div
         class="errorPage"

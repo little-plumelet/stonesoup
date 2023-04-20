@@ -118,10 +118,6 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
             class="searchBar"
           />
         </header>
-        <div
-          class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-          role="separator"
-        />
         <main
           class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
         >
@@ -398,10 +394,6 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
           class="searchBar"
         />
       </header>
-      <div
-        class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-        role="separator"
-      />
       <main
         class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
       >
@@ -735,10 +727,6 @@ exports[`render searchResultPage with recipes 1`] = `
             class="searchBar"
           />
         </header>
-        <div
-          class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-          role="separator"
-        />
         <main
           class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
         >
@@ -877,12 +865,13 @@ exports[`render searchResultPage with recipes 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-primary"
+                class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-primary ant-btn-lg"
                 data-testid="loadMoreButton"
+                style="margin-top: 2rem;"
                 type="button"
               >
                 <span>
-                  Load more
+                  Load more recipes
                 </span>
               </button>
             </div>
@@ -1155,10 +1144,6 @@ exports[`render searchResultPage with recipes 1`] = `
           class="searchBar"
         />
       </header>
-      <div
-        class="ant-divider css-dev-only-do-not-override-mxhywb ant-divider-horizontal"
-        role="separator"
-      />
       <main
         class="ant-layout-content content css-dev-only-do-not-override-mxhywb"
       >
@@ -1297,12 +1282,13 @@ exports[`render searchResultPage with recipes 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-primary"
+              class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-primary ant-btn-lg"
               data-testid="loadMoreButton"
+              style="margin-top: 2rem;"
               type="button"
             >
               <span>
-                Load more
+                Load more recipes
               </span>
             </button>
           </div>

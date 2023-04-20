@@ -89,7 +89,6 @@ export function RecipeInstructionPage() {
             <RecipeInstructions steps={data.analyzedInstructions[0]?.steps} />
           </Content>
         )}
-        <Divider />
         <Footer />
       </Layout>
       <Sider

@@ -10,7 +10,10 @@ import style from './style.module.css';
 
 export function Footer() {
   return (
-    <footer className={style.footer}>
+    <footer
+      className={style.footer}
+      style={{ backgroundColor: 'var(--color-light-gray)' }}
+    >
       <div className={style.footerBlock}>
         <div className={style.logoBlock}>
           <h2 className={style.logo}>Stonesoup</h2>

@@ -1,4 +1,4 @@
-import { Button, Divider, Layout, Space, Spin } from 'antd';
+import { Button, Layout, Space, Spin } from 'antd';
 import { Footer } from '../../commonComponents/footer';
 import { Header } from '../../commonComponents/header';
 import { RecipeCardList } from '../../components/recipeCardList';
@@ -26,7 +26,6 @@ export function SearchResultPage() {
   return (
     <Layout className={style.layout}>
       <Header />
-      <Divider />
       <Content className={style.content}>
         {loading && (
           <div className={style.spinContainer}>
@@ -47,8 +46,10 @@ export function SearchResultPage() {
               onClick={HandleLoadMore}
               disabled={totalResults === offset}
               data-testid="loadMoreButton"
+              size="large"
+              style={{ marginTop: '2rem' }}
             >
-              Load more
+              Load more recipes
             </Button>
           </Space>
         )}

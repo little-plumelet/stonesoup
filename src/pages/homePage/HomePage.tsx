@@ -1,4 +1,4 @@
-import { Divider, Layout } from 'antd';
+import { Layout } from 'antd';
 import { useEffect } from 'react';
 import style from './style.module.css';
 import { Header } from '../../commonComponents/header';
@@ -32,7 +32,6 @@ export function HomePage() {
   return (
     <Layout className={style.layout}>
       <Header />
-      <Divider style={{ marginTop: '0' }} />
       <Content className={style.content}>
         <DayRecipeCard />
         <div className={style.recipeBlocks}>
