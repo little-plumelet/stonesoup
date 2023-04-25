@@ -1,11 +1,18 @@
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button, Card } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import MOCK_DATA from './MOCKDATA.json';
 import style from './style.module.css';
 
-const { image, title } = MOCK_DATA;
+const { image, title, id } = MOCK_DATA;
 
 export function DayRecipeCard() {
+  const navigate = useNavigate();
+
+  function showRecipeInstruction() {
+    navigate(`/recipe/${id}`);
+  }
+
   return (
     <Card className={style.dayRecipeCard}>
       <div className={style.content}>
@@ -25,10 +32,12 @@ export function DayRecipeCard() {
           </div>
 
           <Button
+            data-testid="DayRecipeButton"
             shape="circle"
             size="large"
             icon={<ArrowRightOutlined />}
             className={style.arrow}
+            onClick={showRecipeInstruction}
           />
         </div>
       </div>

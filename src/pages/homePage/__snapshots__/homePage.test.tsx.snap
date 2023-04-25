@@ -149,6 +149,7 @@ exports[`Home page should render 1`] = `
                   </div>
                   <button
                     class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-lg ant-btn-icon-only arrow"
+                    data-testid="DayRecipeButton"
                     type="button"
                   >
                     <span
@@ -492,6 +493,7 @@ exports[`Home page should render 1`] = `
                 </div>
                 <button
                   class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-lg ant-btn-icon-only arrow"
+                  data-testid="DayRecipeButton"
                   type="button"
                 >
                   <span
