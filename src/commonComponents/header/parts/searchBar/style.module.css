@@ -1,3 +1,15 @@
 .searchBar {
-  padding: 0 6rem;
+  padding: 0 var(--left-right-content-padding);
+}
+
+@media screen and (max-width: 900px) {
+  .searchBar {
+    padding: 0 var(--left-right-content-padding-900);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .searchBar {
+    padding: 0 var(--left-right-content-padding-600);
+  }
 }

@@ -38,7 +38,7 @@ export function Header() {
             }}
           />
         )}
-        <Space size="middle">
+        <Space size="middle" className={style.icons}>
           <Button
             shape="circle"
             icon={<SearchOutlined />}

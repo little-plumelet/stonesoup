@@ -56,7 +56,7 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
               </a>
             </nav>
             <div
-              class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center icons"
             >
               <div
                 class="ant-space-item"
@@ -336,7 +336,7 @@ exports[`render searchResultPage with empty array of recipes 1`] = `
             </a>
           </nav>
           <div
-            class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center"
+            class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center icons"
           >
             <div
               class="ant-space-item"
@@ -673,7 +673,7 @@ exports[`render searchResultPage with recipes 1`] = `
               </a>
             </nav>
             <div
-              class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center icons"
             >
               <div
                 class="ant-space-item"
@@ -1094,7 +1094,7 @@ exports[`render searchResultPage with recipes 1`] = `
             </a>
           </nav>
           <div
-            class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center"
+            class="ant-space css-dev-only-do-not-override-mxhywb ant-space-horizontal ant-space-align-center icons"
           >
             <div
               class="ant-space-item"
