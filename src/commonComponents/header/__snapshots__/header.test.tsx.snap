@@ -31,8 +31,8 @@ exports[`header should render 1`] = `
             </h1>
           </div>
           <nav
-            class="nav"
             id="nav"
+            style="display: flex; justify-content: space-around; gap: 1rem;"
           >
             <a
               aria-current="page"
@@ -53,7 +53,7 @@ exports[`header should render 1`] = `
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px;"
+              style="margin-right: 16px;"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-icon-only"
@@ -144,8 +144,8 @@ exports[`header should render 1`] = `
           </h1>
         </div>
         <nav
-          class="nav"
           id="nav"
+          style="display: flex; justify-content: space-around; gap: 1rem;"
         >
           <a
             aria-current="page"
@@ -166,7 +166,7 @@ exports[`header should render 1`] = `
         >
           <div
             class="ant-space-item"
-            style="margin-right: 8px;"
+            style="margin-right: 16px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-mxhywb ant-btn-circle ant-btn-default ant-btn-icon-only"

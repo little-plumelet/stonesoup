@@ -55,3 +55,10 @@
     padding: var(--top-content-padding) var(--left-right-content-padding-600);
   }
 }
+
+@media screen and (max-width: 470px) {
+  .header {
+   flex-direction: column;
+   gap: 2rem;
+  }
+}

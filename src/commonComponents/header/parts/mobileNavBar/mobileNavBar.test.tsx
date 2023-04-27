@@ -1,17 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter, Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { NavBar } from './NavBar';
+import { MobileNavBar } from './MobileNavBar';
 
 describe('navbar', () => {
   it('should be rendered', () => {
     const component = render(
       <MemoryRouter>
-        <NavBar
-          navStyle={{
-            display: 'flex',
-          }}
-        />
+        <MobileNavBar />
       </MemoryRouter>
     );
 
@@ -22,17 +18,15 @@ describe('navbar', () => {
 
     render(
       <Router location={history.location} navigator={history}>
-        <NavBar
-          navStyle={{
-            display: 'flex',
-          }}
-        />
+        <MobileNavBar />
       </Router>
     );
 
+    fireEvent.click(screen.getByTestId('burger-menu'));
     fireEvent.click(screen.getByText('Home'));
     expect(history.location.pathname).toBe('/');
 
+    fireEvent.click(screen.getByTestId('burger-menu'));
     fireEvent.click(screen.getByText('About Us'));
     expect(history.location.pathname).toBe('/about');
   });

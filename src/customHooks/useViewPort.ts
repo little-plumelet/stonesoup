@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export const useVeiwPort = () => {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     function resizeWidth() {

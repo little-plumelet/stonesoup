@@ -5,10 +5,14 @@ import style from './style.module.css';
 import { NavBar } from './parts/navBar';
 import { SearchBar } from './parts/searchBar';
 import logo from '../../assets/pot_logo.png';
+import { MobileNavBar } from './parts/mobileNavBar';
+import { useVeiwPort } from '../../customHooks/useViewPort';
 
 export function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { width } = useVeiwPort();
+  const breackPoint = 620;
 
   const handleSearchClick = () => {
     navigate('/searchresult');
@@ -22,8 +26,16 @@ export function Header() {
           <h1 className={style.logo}>StoneSoup</h1>
           <h1 className={style.logoClone}>StoneSoup</h1>
         </div>
-        <NavBar />
-        <Space>
+        {width >= breackPoint && (
+          <NavBar
+            navStyle={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              gap: '1rem',
+            }}
+          />
+        )}
+        <Space size="middle">
           <Button
             shape="circle"
             icon={<SearchOutlined />}
@@ -31,6 +43,7 @@ export function Header() {
             data-testid="searchicon"
           />
           <Button shape="circle" icon={<UserOutlined />} />
+          {width < breackPoint && <MobileNavBar />}
         </Space>
       </div>
       <div className={style.searchBar}>

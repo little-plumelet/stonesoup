@@ -2,9 +2,14 @@ import { NavLink } from 'react-router-dom';
 import { routes } from '../../../../constants-routes';
 import style from './style.module.css';
 
-export function NavBar() {
+interface INavBarProps {
+  navStyle: {
+    [key: string]: string;
+  };
+}
+export function NavBar({ navStyle }: INavBarProps) {
   return (
-    <nav className={style.nav} id="nav">
+    <nav style={navStyle} id="nav">
       <NavLink
         to={routes.home.path}
         className={({ isActive }) =>
