@@ -15,25 +15,29 @@ exports[`error page should render 1`] = `
             <div
               class="header"
             >
-              <div
-                class="logoBlock"
+              <a
+                href="/"
               >
-                <img
-                  alt="logo"
-                  class="logoImg"
-                  src=""
-                />
-                <h1
-                  class="logo"
+                <div
+                  class="logoBlock"
                 >
-                  StoneSoup
-                </h1>
-                <h1
-                  class="logoClone"
-                >
-                  StoneSoup
-                </h1>
-              </div>
+                  <img
+                    alt="logo"
+                    class="logoImg"
+                    src=""
+                  />
+                  <h1
+                    class="logo"
+                  >
+                    StoneSoup
+                  </h1>
+                  <h1
+                    class="logoClone"
+                  >
+                    StoneSoup
+                  </h1>
+                </div>
+              </a>
               <nav
                 id="nav"
                 style="display: flex; justify-content: space-around; gap: 1rem;"
@@ -308,25 +312,29 @@ exports[`error page should render 1`] = `
           <div
             class="header"
           >
-            <div
-              class="logoBlock"
+            <a
+              href="/"
             >
-              <img
-                alt="logo"
-                class="logoImg"
-                src=""
-              />
-              <h1
-                class="logo"
+              <div
+                class="logoBlock"
               >
-                StoneSoup
-              </h1>
-              <h1
-                class="logoClone"
-              >
-                StoneSoup
-              </h1>
-            </div>
+                <img
+                  alt="logo"
+                  class="logoImg"
+                  src=""
+                />
+                <h1
+                  class="logo"
+                >
+                  StoneSoup
+                </h1>
+                <h1
+                  class="logoClone"
+                >
+                  StoneSoup
+                </h1>
+              </div>
+            </a>
             <nav
               id="nav"
               style="display: flex; justify-content: space-around; gap: 1rem;"

@@ -1,12 +1,13 @@
 import { SearchOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Space } from 'antd';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import style from './style.module.css';
 import { NavBar } from './parts/navBar';
 import { SearchBar } from './parts/searchBar';
 import logo from '../../assets/pot_logo.png';
 import { MobileNavBar } from './parts/mobileNavBar';
 import { useVeiwPort } from '../../customHooks/useViewPort';
+import { routes } from '../../constants-routes';
 
 export function Header() {
   const location = useLocation();
@@ -21,11 +22,13 @@ export function Header() {
   return (
     <header className={style.headerBlock}>
       <div className={style.header}>
-        <div className={style.logoBlock}>
-          <img className={style.logoImg} src={logo} alt="logo" />
-          <h1 className={style.logo}>StoneSoup</h1>
-          <h1 className={style.logoClone}>StoneSoup</h1>
-        </div>
+        <Link to={routes.home.path}>
+          <div className={style.logoBlock}>
+            <img className={style.logoImg} src={logo} alt="logo" />
+            <h1 className={style.logo}>StoneSoup</h1>
+            <h1 className={style.logoClone}>StoneSoup</h1>
+          </div>
+        </Link>
         {width >= breackPoint && (
           <NavBar
             navStyle={{
