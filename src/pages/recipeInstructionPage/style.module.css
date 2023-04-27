@@ -31,3 +31,15 @@
   color: var(--color-error);
   text-align: center;
 }
+
+@media screen and (max-width: 900px) {
+  .content {
+    padding: var(--top-content-padding) 1rem var(--bottom-content-padding) var(--left-right-content-padding-900);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: var(--top-content-padding) 1rem var(--bottom-content-padding) var(--left-right-content-padding-600);
+  }
+}

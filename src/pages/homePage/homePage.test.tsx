@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import * as reactHooks from 'react-redux';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../customHooks/hooksRedux';
 import { HomePage } from './HomePage';
 import '../../../matchMedia';
 

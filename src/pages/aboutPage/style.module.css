@@ -6,3 +6,15 @@
 .content {
   padding: var(--top-content-padding) var(--left-right-content-padding) var(--bottom-content-padding) var(--left-right-content-padding);
 }
+
+@media screen and (max-width: 900px) {
+  .content {
+    padding: var(--top-content-padding) var(--left-right-content-padding-900) var(--bottom-content-padding) var(--left-right-content-padding-900);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: var(--top-content-padding) var(--left-right-content-padding-600) var(--bottom-content-padding) var(--left-right-content-padding-600);
+  }
+}

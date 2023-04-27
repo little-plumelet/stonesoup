@@ -3,7 +3,7 @@ import { createMemoryHistory } from 'history';
 import { MemoryRouter, Router } from 'react-router-dom';
 import * as reactHooks from 'react-redux';
 import { Header } from './Header';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../customHooks/hooksRedux';
 
 jest.mock('react-redux');
 

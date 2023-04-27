@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import style from './style.module.css';
 import { Header } from '../../commonComponents/header';
 import { DayRecipeCard } from '../../components/dayRecipeCard';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../customHooks/hooksRedux';
 import { getRandomDessertRecipes } from '../../store/randomDessertRecipe.slice';
 import { getRandomVegetarianRecipes } from '../../store/randomVegetarianRecipe.slice';
 import { RecipeBlock } from './parts/recipeBlock';

@@ -1,5 +1,5 @@
 import { Input } from 'antd';
-import { useAppDispatch } from '../../../../hooks';
+import { useAppDispatch } from '../../../../customHooks/hooksRedux';
 import {
   addSearchValue,
   searchRecipes,

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter, useLocation, useNavigate } from 'react-router-dom';
 import * as reactHooks from 'react-redux';
-import { useAppSelector, useAppDispatch } from '../../hooks';
+import { useAppSelector, useAppDispatch } from '../../customHooks/hooksRedux';
 import { ISearchedRecipesState } from '../../store/searchRecipe.slice';
 import { SearchResultPage } from './SearchResultPage';
 import '../../../matchMedia';

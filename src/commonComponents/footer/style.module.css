@@ -51,3 +51,15 @@
   color: var(--color-gray);
   font-size: large;
 }
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: var(--top-content-padding) var(--left-right-content-padding-900);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: var(--top-content-padding) var(--left-right-content-padding-600);
+  }
+}

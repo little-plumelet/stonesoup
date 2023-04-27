@@ -21,3 +21,15 @@
 .noData {
   text-align: center;
 }
+
+@media screen and (max-width: 900px) {
+  .content {
+    padding: 3rem var(--left-right-content-padding-900) var(--bottom-content-padding) var(--left-right-content-padding-900);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 3rem var(--left-right-content-padding-600) var(--bottom-content-padding) var(--left-right-content-padding-600);
+  }
+}

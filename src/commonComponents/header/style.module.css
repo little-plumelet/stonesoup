@@ -3,7 +3,7 @@
 }
 
 .header {
-  padding: 2rem 6rem;
+  padding: var(--top-content-padding) var(--left-right-content-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,4 +42,16 @@
 
 .searchBar {
   text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    padding: var(--top-content-padding) var(--left-right-content-padding-900);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: var(--top-content-padding) var(--left-right-content-padding-600);
+  }
 }
