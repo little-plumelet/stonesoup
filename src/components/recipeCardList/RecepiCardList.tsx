@@ -11,7 +11,7 @@ type IRecipeCardListProps = {
 
 export function RecipeCardList({ recipes }: IRecipeCardListProps) {
   return (
-    <Row gutter={[24, { xs: 8, sm: 16, md: 24, lg: 32 }]} justify="start">
+    <Row gutter={[24, { xs: 12, sm: 16, md: 24, lg: 32 }]} justify="start">
       {recipes.map((recipe) => (
         <Col key={recipe.id} span={6} xs={24} sm={12} lg={8} xl={6} xxl={4}>
           <RecipeCard

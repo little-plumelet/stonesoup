@@ -34,3 +34,21 @@
   align-self: flex-end;
   background-color: var(--color-light-blue);;
 }
+
+@media screen and (max-width: 600px) {
+  .content {
+    grid-template-areas: 
+      "img img img img img img"
+      "desc desc desc desc desc desc";
+  }
+
+  .desc {
+    padding: 0;
+  }
+
+  .img {
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 2rem;
+  }
+}
