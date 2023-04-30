@@ -8,12 +8,12 @@ import logo from '../../assets/pot_logo.png';
 import { MobileNavBar } from './parts/mobileNavBar';
 import { useVeiwPort } from '../../customHooks/useViewPort';
 import { routes } from '../../constants-routes';
+import { MOBILE_SCREEN_WIDTH_BREACKPOINT } from '../../constants';
 
 export function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { width } = useVeiwPort();
-  const breackPoint = 620;
 
   const handleSearchClick = () => {
     navigate('/searchresult');
@@ -29,7 +29,7 @@ export function Header() {
             <h1 className={style.logoClone}>StoneSoup</h1>
           </div>
         </Link>
-        {width >= breackPoint && (
+        {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && (
           <NavBar
             navStyle={{
               display: 'flex',
@@ -46,7 +46,7 @@ export function Header() {
             data-testid="searchicon"
           />
           <Button shape="circle" icon={<UserOutlined />} />
-          {width < breackPoint && <MobileNavBar />}
+          {width < MOBILE_SCREEN_WIDTH_BREACKPOINT && <MobileNavBar />}
         </Space>
       </div>
       <div className={style.searchBar}>

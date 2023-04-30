@@ -9,6 +9,7 @@ export const THEME = {
 };
 
 export const SIDER_INGREDIENTS_WITH = 250;
+export const MOBILE_SCREEN_WIDTH_BREACKPOINT = 620;
 
 export enum ETags {
   'servings' = 'servings',
