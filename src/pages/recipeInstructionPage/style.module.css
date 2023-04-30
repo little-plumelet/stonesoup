@@ -1,5 +1,9 @@
 .layout {
   min-height: 100vh;
+}
+
+.layoutWithSider {
+  min-height: 100vh;
   margin-right: var(--sider-ingredients-width);
 }
 
@@ -24,6 +28,13 @@
   height: 100vh;
   right: 0;
   top: 0,
+}
+
+.instructions {
+  background-color: var(--color-creamson);
+  margin: 0 -1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
 }
 
 .error {

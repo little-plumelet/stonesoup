@@ -21,7 +21,13 @@ export function Header() {
 
   return (
     <header className={style.headerBlock}>
-      <div className={style.header}>
+      <div
+        className={
+          location?.pathname.includes('/recipe')
+            ? style.headerRecipePage
+            : style.header
+        }
+      >
         <Link to={routes.home.path}>
           <div className={style.logoBlock}>
             <img className={style.logoImg} src={logo} alt="logo" />

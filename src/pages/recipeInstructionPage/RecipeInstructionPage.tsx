@@ -3,28 +3,30 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from '../../commonComponents/header';
-import { BASE_URL, ETags, SIDER_INGREDIENTS_WITH } from '../../constants';
+import {
+  BASE_URL,
+  ETags,
+  MOBILE_SCREEN_WIDTH_BREACKPOINT,
+  SIDER_INGREDIENTS_WITH,
+} from '../../constants';
 import { Ingredients } from '../../components/ingredients';
 import style from './style.module.css';
 import { RecipeTagList } from '../../components/recipeTagList';
 import { RecipeInstructions } from '../../components/recipeInstructions/RecipeInstructions';
 import { IDetailedRecipe } from '../../interfaces/detailedRecipe.interface';
 import { Footer } from '../../commonComponents/footer';
+import { useVeiwPort } from '../../customHooks/useViewPort';
 
 const API_KEY = import.meta.env.VITE_SPINACULAR_API_KEY;
 
 const { Content, Sider } = Layout;
-
-/*
-  example with state managing inside component
-  TODO: find out why browser make two axios request
-*/
 
 export function RecipeInstructionPage() {
   const location = useLocation();
   const [data, setData] = useState<IDetailedRecipe | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
+  const { width } = useVeiwPort();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,8 +62,14 @@ export function RecipeInstructionPage() {
   }, [id]);
 
   return (
-    <Layout hasSider>
-      <Layout className={style.layout}>
+    <Layout hasSider={width >= MOBILE_SCREEN_WIDTH_BREACKPOINT}>
+      <Layout
+        className={
+          width >= MOBILE_SCREEN_WIDTH_BREACKPOINT
+            ? style.layoutWithSider
+            : style.layout
+        }
+      >
         <Header />
         <Divider style={{ margin: '0' }} />
         {loading && <Spin />}
@@ -86,23 +94,32 @@ export function RecipeInstructionPage() {
                 },
               ]}
             />
+            {width < MOBILE_SCREEN_WIDTH_BREACKPOINT && data && (
+              <div className={style.instructions}>
+              <Ingredients extendedIngredients={data.extendedIngredients} />
+              </div>
+            )}
             <RecipeInstructions steps={data.analyzedInstructions[0]?.steps} />
           </Content>
         )}
         <Footer />
       </Layout>
-      <Sider
-        className={style.sider}
-        width={SIDER_INGREDIENTS_WITH}
-        reverseArrow
-        style={{
-          position: 'fixed',
-          backgroundColor: 'var(--color-creamson)',
-          width: 'var(--sider-ingredients-width)',
-        }}
-      >
-        {data && <Ingredients extendedIngredients={data.extendedIngredients} />}
-      </Sider>
+      {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && (
+        <Sider
+          className={style.sider}
+          width={SIDER_INGREDIENTS_WITH}
+          reverseArrow
+          style={{
+            position: 'fixed',
+            backgroundColor: 'var(--color-creamson)',
+            width: 'var(--sider-ingredients-width)',
+          }}
+        >
+          {data && (
+            <Ingredients extendedIngredients={data.extendedIngredients} />
+          )}
+        </Sider>
+      )}
     </Layout>
   );
 }
