@@ -1,14 +1,19 @@
 import {
+  DownOutlined,
   FacebookOutlined,
   InstagramOutlined,
   YoutubeOutlined,
 } from '@ant-design/icons';
-import { Divider } from 'antd';
-import { Link } from 'react-router-dom';
+import { Divider, Dropdown, Space, Typography } from 'antd';
+import { MOBILE_SCREEN_WIDTH_BREACKPOINT } from '../../constants';
 import { routes } from '../../constants-routes';
+import { useVeiwPort } from '../../customHooks/useViewPort';
 import style from './style.module.css';
+import { navItems, networkItems } from './utils';
 
 export function Footer() {
+  const { width } = useVeiwPort();
+
   return (
     <footer
       className={style.footer}
@@ -23,34 +28,56 @@ export function Footer() {
             come true.
           </p>
         </div>
-        <div className={style.navBlock}>
-          <nav className={style.nav}>
-            <p>Stonesoup</p>
-            <Link to={routes.home.path} className={style.link}>
-              {routes.home.title}
-            </Link>
-            <Link to={routes.about.path} className={style.link}>
-              {routes.about.title}
-            </Link>
-            <Link to={routes.contacts.path} className={style.link}>
-              {routes.contacts.title}
-            </Link>
-          </nav>
-          <nav className={style.nav}>
-            <p>Follow</p>
-            <a href="https://www.instagram.com" className={style.link}>
-              Instagram
-            </a>
-            <a href="https://www.facebook.com" className={style.link}>
-              Facebook
-            </a>
-            <a href="https://www.youtube.com" className={style.link}>
-              Youtube
-            </a>
-          </nav>
-        </div>
+        {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && (
+          <div className={style.navBlock}>
+            <nav className={style.nav}>
+              <p>{navItems.title}</p>
+              {navItems.items?.map((item) => item.label)}
+            </nav>
+            <nav className={style.nav}>
+              <p>{networkItems.title}</p>
+              {networkItems.items?.map((item) => item.label)}
+            </nav>
+          </div>
+        )}
+        {width < MOBILE_SCREEN_WIDTH_BREACKPOINT && (
+          <>
+            <Dropdown
+              menu={{
+                selectable: true,
+                items: navItems.items,
+                defaultSelectedKeys: [routes.home.title],
+              }}
+              placement="bottomLeft"
+              arrow
+            >
+              <Typography.Link>
+                <Space className={style.navDropDownButton}>
+                  {navItems.title}
+                  <DownOutlined />
+                </Space>
+              </Typography.Link>
+            </Dropdown>
+            <Dropdown
+              menu={{
+                selectable: true,
+                items: networkItems.items,
+                defaultSelectedKeys: [routes.home.title],
+              }}
+              placement="bottomLeft"
+              arrow
+            >
+              <Typography.Link>
+                <Space className={style.navDropDownButton}>
+                  {networkItems.title}
+                  <DownOutlined />
+                </Space>
+              </Typography.Link>
+            </Dropdown>
+          </>
+        )}
       </div>
-      <Divider />
+      {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && <Divider />}
       <div className={style.footerBlock}>
         <p className={style.copyright}>
           &#169; 2023 Stonesoup - all rights reserved
