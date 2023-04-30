@@ -35,15 +35,16 @@ export function Header() {
             <h1 className={style.logoClone}>StoneSoup</h1>
           </div>
         </Link>
-        {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && (
-          <NavBar
-            navStyle={{
-              display: 'flex',
-              justifyContent: 'space-around',
-              gap: '1rem',
-            }}
-          />
-        )}
+        {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT &&
+          !location?.pathname.includes('/recipe') && (
+            <NavBar
+              navStyle={{
+                display: 'flex',
+                justifyContent: 'space-around',
+                gap: '1rem',
+              }}
+            />
+          )}
         <Space size="middle" className={style.icons}>
           <Button
             shape="circle"
@@ -52,7 +53,8 @@ export function Header() {
             data-testid="searchicon"
           />
           <Button shape="circle" icon={<UserOutlined />} />
-          {width < MOBILE_SCREEN_WIDTH_BREACKPOINT && <MobileNavBar />}
+          {(width < MOBILE_SCREEN_WIDTH_BREACKPOINT ||
+            location?.pathname.includes('/recipe')) && <MobileNavBar />}
         </Space>
       </div>
       <div className={style.searchBar}>

@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  padding: var(--top-content-padding) 0 var(--top-content-padding) var(--left-right-content-padding);
+  padding: var(--top-content-padding) var(--left-right-content-padding);
 }
 
 .header:hover .logo {
@@ -60,7 +60,7 @@
   }
 
   .headerRecipePage {
-    padding: var(--top-content-padding) 0 var(--top-content-padding) var(--left-right-content-padding-900);
+    padding: var(--top-content-padding) var(--left-right-content-padding-900);
   }
 }
 
@@ -70,7 +70,7 @@
   }
 
   .headerRecipePage {
-    padding: var(--top-content-padding) 0 var(--top-content-padding) var(--left-right-content-padding-600);
+    padding: var(--top-content-padding) var(--left-right-content-padding-600);
   }
 }
 
