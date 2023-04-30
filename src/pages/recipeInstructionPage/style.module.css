@@ -1,10 +1,16 @@
 .layout {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .layoutWithSider {
   min-height: 100vh;
   margin-right: var(--sider-ingredients-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .content {

@@ -62,7 +62,10 @@ export function RecipeInstructionPage() {
   }, [id]);
 
   return (
-    <Layout hasSider={width >= MOBILE_SCREEN_WIDTH_BREACKPOINT}>
+    <Layout
+      hasSider={width >= MOBILE_SCREEN_WIDTH_BREACKPOINT}
+      className={style.layout}
+    >
       <Layout
         className={
           width >= MOBILE_SCREEN_WIDTH_BREACKPOINT
@@ -70,8 +73,10 @@ export function RecipeInstructionPage() {
             : style.layout
         }
       >
-        <Header />
-        <Divider style={{ margin: '0' }} />
+        <div>
+          <Header />
+          <Divider style={{ margin: '0' }} />
+        </div>
         {loading && <Spin />}
         {errorMessage && <p className={style.error}>{errorMessage}</p>}
         {data && (
@@ -96,7 +101,7 @@ export function RecipeInstructionPage() {
             />
             {width < MOBILE_SCREEN_WIDTH_BREACKPOINT && data && (
               <div className={style.instructions}>
-              <Ingredients extendedIngredients={data.extendedIngredients} />
+                <Ingredients extendedIngredients={data.extendedIngredients} />
               </div>
             )}
             <RecipeInstructions steps={data.analyzedInstructions[0]?.steps} />
