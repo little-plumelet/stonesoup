@@ -5,6 +5,7 @@ import {
   YoutubeOutlined,
 } from '@ant-design/icons';
 import { Divider, Dropdown, Space, Typography } from 'antd';
+import { useLocation } from 'react-router-dom';
 import { MOBILE_SCREEN_WIDTH_BREACKPOINT } from '../../constants';
 import { routes } from '../../constants-routes';
 import { useVeiwPort } from '../../customHooks/useViewPort';
@@ -13,13 +14,20 @@ import { navItems, networkItems } from './utils';
 
 export function Footer() {
   const { width } = useVeiwPort();
+  const location = useLocation();
 
   return (
     <footer
       className={style.footer}
       style={{ backgroundColor: 'var(--color-light-gray)' }}
     >
-      <div className={style.footerBlock}>
+      <div
+        className={
+          location?.pathname.includes('/recipe')
+            ? style.footerBlockRecipePage
+            : style.footerBlock
+        }
+      >
         <div className={style.logoBlock}>
           <h2 className={style.logo}>Stonesoup</h2>
           <p className={style.logoContent}>
@@ -28,19 +36,21 @@ export function Footer() {
             come true.
           </p>
         </div>
-        {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && (
-          <div className={style.navBlock}>
-            <nav className={style.nav}>
-              <p>{navItems.title}</p>
-              {navItems.items?.map((item) => item.label)}
-            </nav>
-            <nav className={style.nav}>
-              <p>{networkItems.title}</p>
-              {networkItems.items?.map((item) => item.label)}
-            </nav>
-          </div>
-        )}
-        {width < MOBILE_SCREEN_WIDTH_BREACKPOINT && (
+        {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT &&
+          !location?.pathname.includes('/recipe') && (
+            <div className={style.navBlock}>
+              <nav className={style.nav}>
+                <p>{navItems.title}</p>
+                {navItems.items?.map((item) => item.label)}
+              </nav>
+              <nav className={style.nav}>
+                <p>{networkItems.title}</p>
+                {networkItems.items?.map((item) => item.label)}
+              </nav>
+            </div>
+          )}
+        {(width < MOBILE_SCREEN_WIDTH_BREACKPOINT ||
+          location?.pathname.includes('/recipe')) && (
           <>
             <Dropdown
               menu={{
@@ -77,7 +87,8 @@ export function Footer() {
           </>
         )}
       </div>
-      {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT && <Divider />}
+      {width >= MOBILE_SCREEN_WIDTH_BREACKPOINT &&
+        !location?.pathname.includes('/recipe') && <Divider />}
       <div className={style.footerBlock}>
         <p className={style.copyright}>
           &#169; 2023 Stonesoup - all rights reserved

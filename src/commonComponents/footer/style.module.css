@@ -8,6 +8,13 @@
   justify-content: space-between;
 }
 
+.footerBlockRecipePage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
 .logoBlock {
   max-width: 15rem;
 }
@@ -72,6 +79,15 @@
     flex-direction: column;
     gap: 4rem
   }
+
+  .footerBlock {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footerBlockRecipePage {
+    margin-bottom: 0
+  };
 
   .footerBlock {
     flex-direction: column;
