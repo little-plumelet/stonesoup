@@ -7,6 +7,17 @@
   padding: var(--top-content-padding) var(--left-right-content-padding) var(--bottom-content-padding) var(--left-right-content-padding);
 }
 
+.paragraph {
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.chefImage {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 900px) {
   .content {
     padding: var(--top-content-padding) var(--left-right-content-padding-900) var(--bottom-content-padding) var(--left-right-content-padding-900);
