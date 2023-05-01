@@ -16,7 +16,7 @@ export const routes: { [K in RoutesKey]: { path: string; title: string } } = {
     title: 'About Us',
   },
   contacts: {
-    path: '/#',
+    path: '/contacts',
     title: 'Contacts',
   },
   searchResult: {
@@ -25,10 +25,10 @@ export const routes: { [K in RoutesKey]: { path: string; title: string } } = {
   },
   detailedRecipe: {
     path: '/recipe/:id',
-    title: '',
+    title: 'recipe',
   },
   other: {
     path: '*',
-    title: '',
+    title: 'other',
   },
 };
