@@ -25,7 +25,11 @@ export function RecipeCard({
   }
 
   return (
-    <Card hoverable cover={<img alt="recipe" src={image} />}>
+    <Card
+      hoverable
+      style={{ width: '100%' }}
+      cover={<img alt="recipe" src={image} />}
+    >
       <Meta
         title={
           <Tooltip title={title} placement="topLeft">
