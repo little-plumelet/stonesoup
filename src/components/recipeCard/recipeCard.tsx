@@ -27,8 +27,7 @@ export function RecipeCard({
   return (
     <Card
       hoverable
-      style={{ width: '100%' }}
-      cover={<img alt="recipe" src={image} />}
+      cover={<img alt="recipe" src={image} style={{ width: '100%' }} />}
     >
       <Meta
         title={
