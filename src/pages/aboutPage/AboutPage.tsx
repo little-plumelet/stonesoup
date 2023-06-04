@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 import { Footer } from '../../commonComponents/footer';
 import { Header } from '../../commonComponents/header';
-import chef from '../../assets/about-chef.jpeg';
+import chef from '../../assets/about-chef.webp';
 import style from './style.module.css';
 
 const { Content } = Layout;
