@@ -1,5 +1,5 @@
 ##### To see the project go to [www.stonesoup.com](https://stonesoup.onrender.com/)
-# *Stonesoop*
+# *Stonesoup*
 This app created via using React, Redux-toolkit, Vite, React-router-dom, Axious, AntDesign and other tools.
 
 Stonesoop is an app about recipes.
